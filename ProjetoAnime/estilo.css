@@ -1,0 +1,114 @@
+/* charset UTF-8 e uma tag que defini o conjunto de caracteres a ser utilizado na web ou seja e capaz de codificar a maioria dos caracteres especiais utilizados em diferentes idiomas*/
+@charset "UTF-8";
+
+/* exportação de fontes seja ela interna ou externa */
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'digital-7';
+    src: url('fonte/digital-7.ttf');
+}
+
+/* criação de uma paleta de cores utilizando VARIAVEL */
+:root {
+    --cor0: #86B7F0;
+    --cor1: #50A2EB;
+    --cor2: #389AF5;
+    --cor3: #0C7DF5;
+    --cor4: #1075DB;
+
+    --fonte-padrao:'Agdasima', sans-serif;
+    --fonte-secundaria: 'digital-7', cursive;
+}
+
+/*  reseta os padroes dos navegadores a 0 em espaçamento */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    /* altura total do navegadoor */
+    height: 100vh;
+    /* largura total do navegador*/
+    width: 100vw;
+    /* cor do fundo */
+    background-color: rgb(24, 24, 27);
+}
+
+body{
+    /* coloca uma imagem no fundo que não vai repetir top center */
+    background: url(imagens/fundo22.jpg) no-repeat top  center;
+    /* defiini o tamanho da imagem de fundo do elemento ex. esticada ou restrita */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main {
+    /* posição relativa passa aceitar propriedades de direcionamentos  */
+    position: relative;
+    /* altura total do navegador */
+    height: 100vh;
+}
+
+section#telefone {
+    /* posição absoluta direciona em qual posição vai fica */
+    position: absolute;
+    /* posição em cima */
+    top: 48%;
+    /* posição esquerda */
+    left: 50%;
+    /* para deixar no meio da tela e preciso transform */
+
+    transform: translate(-40%, -50%);
+
+    /* altura */
+    height: 600px;
+    /* largura */
+    width: 700px;
+    /* imagem do celular*/
+    background: url(imagens/painel_amostra.png)no-repeat;
+}
+
+/* direcionamento da tela home */
+iframe#tela {
+    /* deixa livre para posicionamento */
+    position: relative;
+    /* direciona para topo */
+    top: 35px;
+    /* direciona para esquerda */
+    left: 22px;
+    /* largura */
+    width: 533px;
+    /* altura */
+    height: 328px;
+}
+
+/* posiciona as logo na direita */
+section#redes-sociais{
+    text-align: bottom;
+}
+
+/* aqui vai posiciona as logos  */
+section#redes-sociais img{
+    /* defini largura */
+    width: 80px;
+    /* deifni espaçamento */
+    margin: 10px;
+    /* border radius pra deixa arredondado */
+    border-radius: 10px;
+    /* coloca sombra, obs. pode ser colocado cor   */
+    box-shadow: 2px 2px 5px red;
+}
+
+/* efeito nos logos */
+section#redes-sociais img:hover {
+    /* ao clicar cria um efeito borda */
+    border: 2px solid var(--cor1);
+    /* vai da um pequeno efeito */
+    transform: translate(-3px, -3px);
+    /* aumenta um efeito da sombra apos o transform */
+    box-shadow: 5px 5px 10px red);
+    /* aqui da uma duração ao efeito */
+    transition: .3s, border 1s;
+}

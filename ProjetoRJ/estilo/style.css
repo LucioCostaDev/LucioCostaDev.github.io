@@ -1,0 +1,156 @@
+@charset "UTF-8"
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Beauty';
+    src: url('../fontes/BeautyDemo.ttf');
+    /* font-weight: normal; */
+}
+
+/* VARIAVEIS DE CORES E FONTES */
+:root {
+    /* PRIMARIA */
+    --cor1: #A8FFA4;
+    --cor2: #77FF70;
+    --cor3: #0DFF00;
+    --cor4: #09B000;
+    --cor5: #078700;
+
+    /* SECUNDARIA */
+    --cor6: #AEC2FF;
+    --cor7: #80A0FF;
+    --cor8: #1C55FF;
+    --cor9: #002592;
+    --cor10: #001C71;
+
+    /* TERCEARIA */
+    --cor11: #FFFCA4;
+    --cor12: #FFFA70;
+    --cor13: #FFF700;
+    --cor14: #FFF700;
+    --cor15: #A7A200;
+
+
+    --fonte1: 'Dancing Script', cursive;
+    --fonte2: 'Beauty', cursive;
+
+}
+
+/* Reseta configurações padrões do HTML */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte1);
+}
+
+/* configurações pradões da página e no corpo  */
+html, body {
+    min-height: 100vh;
+    background-color: var(--cor5);
+}
+
+/* cabeçalho */
+header {
+    background-color: var(--cor10);
+    color: white;
+    text-align: center;
+}
+
+/* alteração no H1 (filho) de dentro cabeçalho */
+header > h1 {
+    /* distaciamento de cima */
+    padding-top: 50px;
+    font-variant: small-caps;
+    font-family: var(--fonte);
+    /* fonte 10% view port */
+    font-size: 10vw;
+}
+
+/* alteração no paragrafo(filho) dentro do cabeçalho*/
+header > p {
+    /* distanciamento para baixo do paragrafo */
+    padding-bottom: 50px;
+}
+
+/* alteração no link(filho) do cabeçalho e roda pé */
+header a, footer a {
+    color: white;
+    /* tira decoração como o sublinhado do link */
+    text-decoration: none;
+    /* alteração na fonte deixando mais escuro */
+    font-weight: bolder;
+}
+
+/* criar efeito no link */
+header a:hover, footer a:hover {
+    /* exibi uma linha no link */
+    text-decoration: underline;
+}
+
+/* obejtivo aqui e criar um espaçamento para efeito paralax*/
+section {
+    padding: 10vh;
+    /* espaçamento de 10% da altura em cima */
+    /* padding-top: 10vh; */
+    /* espaçamento de 10% da altura em baxio */
+    /* padding-bottom: 10vh; */
+    /* espaçamento duplo entre linhas */
+    line-height: 2em;
+    /* espaçamento na esquerda */
+    /* padding-left: 30px; */
+    /* font-size: 3.5vw; */
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+/* seção ou um paragrafo */
+section.normal {
+    background-color: var(--cor12);
+    /* color: black; */
+}
+
+/* seção ou paragrafo efeito parallax*/
+section.imagem {
+    background-color: var(--cor4);
+    /* color: white; */
+    box-shadow: inset 6px 6px 13px 0px black;
+    background-size: cover;
+    /* fixa a imagem */
+    background-attachment: fixed;
+}
+
+section.imagem > p {
+    display: inline-block;
+    /* width: 400px; */
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.116);
+    text-shadow: 2px 2px 0px black ;
+    color: white;
+}
+
+/* criação de id para as imagens */
+#img1 {
+    background-image: url('../imagens/arpoador.jpg');
+    background-position: right center;
+}
+
+#img2 {
+    background-image: url('../imagens/cristoredentor.jpg');
+    background-position: right center;
+}
+
+#img3 {
+    background-image: url('../imagens/maracana.jpg');
+    background-position: center center;
+}
+
+/* final ou pé do site  */
+footer {
+    background-color: var(--cor10);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
