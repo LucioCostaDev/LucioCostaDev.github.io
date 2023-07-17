@@ -1,0 +1,191 @@
+body {
+	/* foi exportado do google fonts  */
+	font-family: 'Poppins', sans-serif;
+	/* body corpo definido como 1280x1966 */
+	max-width: 1280px;
+	/* defini as sobras automáticamente da largura do navegador */
+	margin: 0 auto;
+	/* Cor do fundo */
+	background-color: #70B3DF;
+	/* Cor da fonte */
+	color: black;
+}
+
+/* Definido para poder fazer fica escuro o background ao aperta botão - JAVASCRIPT */
+body.modo-escuro {
+	/* Fundo */
+	background-color: #212121;
+	/* cor da fonte */
+	color: #f5f5f5;
+}
+
+/* Cabeçalho */
+header {
+	/* DISPLAY FLEX faz com que elementos possam ser posicionados */
+	display: flex;
+	/* JUSTIFY CONTENT da um espaça,espaçamento entre os elementos  */
+	justify-content: space-between;
+	/* PADDING da um espaçamento para o elemento */
+	padding: 25px;
+}
+
+/* .logo é .imagem-botao são classes definida dentro do IMG dentro HEADER para ser estilizada (sofrer alteração)  */
+header .logo,
+header .imagem-botao {
+	width: 40px;
+	/*  */
+	/* transition: 0.2s ease-in-out; */
+}
+
+/* #BOTAO-ALTERAR-TEMA e uma ID de button foi criado pra tirar o fundo branco da imagem */
+header #botao-alterar-tema {
+	background: none;
+	border: none;
+}
+
+/* Efeito no interruptor HOVER é TRANSFORM SCALE brabo kkk.. */
+header .imagem-botao:hover {
+	transform: scale(1, -1);
+	cursor: pointer;
+}
+
+/* E usado um a pseudoclasse :HOVER pra da um efeito nos botões e imagens ao passar o ponteiro do mouse */
+header .logo:hover,
+main .cartao-pokemon:hover {
+	/* TRANSFORM SCALE e a duração do efeito hover */
+	transform: scale(1.05);
+	/* CURSOR POINTER da o efeito de uma mão apontando */
+	cursor: pointer;
+}
+
+/* Visando de uma forma de aprendizado o MAIN seria o peito do corpo */
+main {
+	/* PADDING aqui da um espaçamento dos elementos no peito */
+	padding: 25px;
+}
+
+/* Na UL tem a calsse .LISTAGEM-POKEMON vai ser alterada para o conteudo fica separado e na vertical */
+main .listagem-pokemon {
+/* Na UL o DIPLAY FLEX vai separar os conteudos da UL e deixa na vertical */
+	display: flex;
+/* FLEX WRAP vai deixar na vertical ouse ja quebra pra baixo os cartões */
+	flex-wrap: wrap;
+	/* O GAP vai dar os espaçamentos entre os elementos cartões */
+	gap: 30px;
+	/* O JUSTIFY CONTENT vai centralizar os conteudo da UL; */
+	justify-content: center;
+
+	/* Obs. UL está seguindo um pedagogia de ser PAI para FILHOS ou seja UL > li > div > spam que estão dentro da UL  */
+}
+
+/* LI tem a classe .CARTAO- POKEMON tem que ser estilizada para virar um cartão */
+main .cartao-pokemon {
+	/* vai ser o fundo do cartão */
+	background-color: #b1afa8;
+	/* WIDTH aqui está dando largura para virar carta */
+	width: 200px; 
+	/* PADDING aqui da um espaçamento da borda dos cartoes, explicanro a letras proximas da bordas */
+	padding: 15px;
+	/* DISPLAY FLEX deixa LI como pai o que tornas outras tags como filho e com isso coloco todos lado a lado separando */
+	display: flex;
+	/* FLEX DIRECTION  faz com que seja alinhada por coluna um embaixo da outra */
+	flex-direction: column;
+/* ALIGN ITENS centraliza as tags filhos no meio  */
+	align-items: center;
+/* O GAP vai dar os espaçamentos entre os elementos cartões */
+	gap: 15px;
+	/* BORDER RADIUS vai da uma aparência de borda aredondada*/
+	border-radius: 15px;
+	/* BOX SHADOW cria um sombramento na cartas */
+	box-shadow: 5px 5px #797f81;
+	/* TRANSITION VAI FAZER um efeito de transição ao tocar a carta */
+	transition: 0.2s ease-in-out;
+}
+
+/* EFEITO HOVER efeito no cartão de muda o fundo  */
+main .cartao-pokemon:hover {
+	background-color: #cfe414;
+}
+
+.modo-escuro .cartao-pokemon {
+	background-color: #a8a8a8;
+}
+
+/* objetivo desse seletor e alterar o campo informção da carta */
+main .cartao-pokemon .informacoes {
+	/* tem como objetivo separar elemntos */
+	display: flex;
+
+	justify-content: space-between;
+	/* cariar uma borda na informação */
+	border: 1px solid #333333;
+	/* deixa borda arredonda */
+	border-radius: 10px;
+}
+
+/* estilização do conteudo no SPAN */
+main .cartao-pokemon .informacoes span {
+	/* espaçamento */
+	padding: 5px;
+	/* seletor para deixa tudo em letra maiuscula */
+	text-transform: uppercase;
+	/* tamanho da  fonte */
+	font-size: 17px;
+}
+
+/* Alterar o tamanho da imagens GIF*/
+main .cartao-pokemon .gif {
+	/* largura da imagem */
+	width: 90px;
+	/* altura da imagem */
+	height: 90px;
+}
+
+/* alterar informação do subtexto  */
+main .cartao-pokemon .tipos {
+	/* separar os elementos com isso coloca ao lado */
+	display: flex;
+	/* espaçameto entre as linhas e colunas*/
+	gap: 15px;
+}
+
+/* seletor com objetivo de dar um espaçamento */
+main .cartao-pokemon .tipo {
+	/* espaçamento */
+	padding: 8px;
+	/* criar uma borda arredondada */
+	border-radius: 10px;
+}
+
+ /* CLASSES criadas para da cor ao fundo do sub texto */
+.grama {
+	background-color: #7ac74c;
+}
+
+.veneno {
+	background-color: #df67ddfb;
+}
+
+.fogo {
+	background-color: #ee8130;
+}
+
+.agua {
+	background-color: #6390f0;
+}
+
+.inseto {
+	background-color: #a6b91a;
+}
+
+/* classe Descriçao para estilização */
+main .descricao {
+	/* defini a altura máxima de um elemento <p> */
+	max-height: 80px;
+	/* Cria um scroll na descrição */
+	overflow-y: scroll;
+	/* tamanho da fonte */
+	font-size: 14px;
+	/* espaçamento no conteudo  */
+	padding-right: 10px;
+}
