@@ -1,0 +1,32 @@
+@charset "UFT-8";
+
+/*  Typical Device breakpoints
+-------------------------------
+Pequenas: telas: até 600px
+Celular: de 600px até 768px
+Tablet: 768px  até 1200px
+Desktop: 992px até 1200px 
+Grandes telas: acima de 1200px 
+*/
+
+/* O media aqui defini que o menuburguer de acordo que a tela for maior desapareça e entre os menus normais  */
+@media screen and (min-width: 768px) {
+    #menuburguer{
+        display: none;
+    }
+
+    /* Vai fazer aparecer os menus, devido o menuburguer desaparecer */
+    menu {
+        display: block;
+    }
+
+    /* aqui vai deixar os itens que estão um abaixo do outro, lado a lado */
+    menu > ul > li {
+        display: inline-block;
+    }
+    
+    /* criação para que o conteudo fique com uma largura fixa  */
+    main {
+        width: 768px;
+    }
+}
