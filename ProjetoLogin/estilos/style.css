@@ -52,7 +52,7 @@ section#login {
     /* cria arrendondamento  */
     border-radius: 20px;
     /* sobra na caixa */
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 
     /* animação de mudança de telas  */
     transition: width 0.3s, height 0.3s;
@@ -71,14 +71,14 @@ section#login > div#imagem {
     /* posição da imagem */
     background-position: left bottom;
     /* altura */
-    height: 300px;
+    height: 250px;
 }
 
 section#login > div#formulario {
     /* cria um bloco */
     display: block;
     /* espaçamento  */
-    padding: 9px;
+    padding: 20px;
 }
 
 div#formulario > h1 {
@@ -90,18 +90,54 @@ div#formulario > p {
     font-size: 0.8em;
 }
 
+form > div.campo {
+    background-color: rebeccapurple;
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px;
+}
+
+div.campo > label {
+    display: none;
+}
+
+div.campo > span {
+    color: white;
+    /* background-color: rgb(0, 0, 0); */
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: rgb(34, 235, 68);
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    transform: translateY(-10px);
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* efeito de deixa caixa de testo branca ao digitar */
+div.campo > input:focus-within {
+    background-color: white;
+}
+
 /* Formatação do Botão entrar */
 form > input[type=submit] {
     /* cria um bloco faz com que outros elementos fiquem abaixo */
     display: block;
-    /* margens fora */
-    margin: 5px;
     /* tamanho da fonte */
     font-size: 1em;
     /* obs. 100% e não vw, motivo não e o tamanho da tela e sim da caixa de login */
-    width: 95%;
+    width: 100%;
     /* altura */
-    height: 30px;
+    height: 40px;
     background-color: greenyellow;
     /* corda da fonte */
     /* color: white; */
