@@ -14,7 +14,7 @@ Paleta de cores
 
 body, html {
     /* cor do fundo */
-    background-color: blue;
+    background-color: rgb(34, 235, 68);
     /* altura de 100% da tela */
     height: 100vh;
     /* largura de 100% */
@@ -53,6 +53,11 @@ section#login {
     border-radius: 20px;
     /* sobra na caixa */
     box-shadow: 0px 0px 10px black;
+
+    /* animação de mudança de telas  */
+    transition: width 0.3s, height 0.3s;
+    /* tempo de animação */
+    transition-timing-function: ease;
 }
 
 
@@ -60,7 +65,7 @@ section#login > div#imagem {
     /* cria um bloco */
     display: block;
     /* fundo azul com imagem */
-    background: blue url(../imagens/telalogin.jpg) no-repeat;
+    background: rgb(34, 235, 68) url(../imagens/telalogin.jpg) no-repeat;
     /* deixa as imagens completas */
     background-size: cover;
     /* posição da imagem */
