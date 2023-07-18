@@ -46,9 +46,9 @@ section#login {
     /* cor de fundo */
     background-color: white;
     /* largura */
-    width: 250px;
+    width: 300px;
     /* altura */
-    height: 500px;
+    height: 600px;
     /* cria arrendondamento  */
     border-radius: 20px;
     /* sobra na caixa */
@@ -90,3 +90,67 @@ div#formulario > p {
     font-size: 0.8em;
 }
 
+/* Formatação do Botão entrar */
+form > input[type=submit] {
+    /* cria um bloco faz com que outros elementos fiquem abaixo */
+    display: block;
+    /* margens fora */
+    margin: 5px;
+    /* tamanho da fonte */
+    font-size: 1em;
+    /* obs. 100% e não vw, motivo não e o tamanho da tela e sim da caixa de login */
+    width: 95%;
+    /* altura */
+    height: 30px;
+    background-color: greenyellow;
+    /* corda da fonte */
+    /* color: white; */
+    /* tira borda padrão */
+    border: none;
+    /* coloca a borda arredondada */
+    border-radius: 10px;
+    /* coloco a maozinha ao posiciona o ponteiro do mouse acima do botão */
+    cursor: pointer;
+}
+
+/* efetio ao passar o poteiro do mouse no botão, muda a cor  */
+form > input[type=submit]:hover {
+    background-color:rgb(34, 235, 68);
+}
+
+/* o link da classe botão que está dentro do form  */
+form > a.botao {
+    /* cria um bloco */
+    display: block;
+    /* alinhamento do texto ao centro */
+    text-align: center;
+    /* tamanho da fonte */
+    font-size: 1em;
+    /* largura da tela sendo 100% da tela do login */
+    width: 100%;
+    /* altura da caixa */
+    height: 40px;
+    /* altura acima */
+    padding-top: 5px;
+    /* margem de cima */
+    margin-top: 5px;
+    /* cor de fundo */
+    background-color: rgb(34, 235, 68);
+    color: rgb(2, 26, 12);
+    /* cria uma borda na caixa */
+    border: 1px solid rebeccapurple;
+    /* borda fica arredondada */
+    border-radius: 10px;
+    /* tira o sublinhado do link */
+    text-decoration: none;
+}
+
+/* efetio ao passar o poteiro do mouse no botão, muda a cor  */
+form  > a.botao:hover {
+    background-color: rebeccapurple;
+}
+
+/* posiciona o icon imail */
+form > a.botao > span {
+    font-size: 1.3em;
+}
