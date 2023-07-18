@@ -7,5 +7,72 @@ Paleta de cores
 
 *{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
+
+body, html {
+    /* cor do fundo */
+    background-color: blue;
+    /* altura de 100% da tela */
+    height: 100vh;
+    /* largura de 100% */
+    width: 100vw;
+}
+
+main {
+    /* Definir as propriedades superior, direita, inferior e esquerda de um elemento relativamente posicionado fará com que ele seja ajustado para longe de sua posição normal. */
+    position: relative;
+    /* altura 100% da tela */
+    height: 100vh;
+    /* largura 100% da tela */
+    width: 100vw;
+}
+
+/* aqui o objetivo e deixa centralizado a tela de login */
+section#login {
+    /* Elementos posicionados absolutos são removidos do fluxo normal e podem sobrepor elementos. */
+    position: absolute;
+    /* direcionamento cima */
+    top: 50%;
+    /* direcionamento esquerda */
+    left: 50%;
+    /* O translate()método move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y). */
+    transform: translate(-50%, -50%);
+    /* O estouro é cortado e o restante do conteúdo ficará invisível */
+    overflow: hidden;
+
+    /* cor de fundo */
+    background-color: white;
+    /* largura */
+    width: 250px;
+    /* altura */
+    height: 500px;
+    /* cria arrendondamento  */
+    border-radius: 20px;
+    /* sobra na caixa */
+    box-shadow: 0px 0px 10px black;
+}
+
+
+section#login > div#imagem {
+    /* cria um bloco */
+    display: block;
+    /* fundo azul com imagem */
+    background: blue url(../imagens/telalogin.jpg) no-repeat;
+    /* deixa as imagens completas */
+    background-size: cover;
+    /* posição da imagem */
+    background-position: left bottom;
+    /* altura */
+    height: 200px;
+}
+
+section#login > div#formulario {
+    /* cria um bloco */
+    display: block;
+    /* espaçamento */
+    padding: 10px;
+}
+
