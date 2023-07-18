@@ -77,8 +77,8 @@ section#login > div#imagem {
 section#login > div#formulario {
     /* cria um bloco */
     display: block;
-    /* espaçamento */
-    padding: 10px;
+    /* espaçamento  */
+    padding: 9px;
 }
 
 div#formulario > h1 {
