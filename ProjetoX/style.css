@@ -44,6 +44,12 @@ button {
     margin: auto 0 1rem auto;
 }
 
+img {
+    width: 100px;
+    /* height: 100px; */
+   background-size: ; 
+}
+
  .container {
     display: flex;
     flex-flow: column;
@@ -57,7 +63,7 @@ button {
     border: 1px solid #ccc;
     border-radius: 1rem;
     padding: 0.8rem;
-    width: 100;
+    width: 100%;
     min-width: 24rem;
     max-width: 30rem;
     margin: 0 auto;
