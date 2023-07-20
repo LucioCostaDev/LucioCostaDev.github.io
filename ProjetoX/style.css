@@ -46,8 +46,6 @@ button {
 
 img {
     width: 100px;
-    /* height: 100px; */
-   background-size: ; 
 }
 
 .cabecalho {
@@ -56,10 +54,6 @@ img {
     font-size: 9em;
     color: rgb(175, 13, 13);
     width: 400px;
-    margin: 0px;
-    padding: 0px;
-    align-items: center;
-    text-align: center;
 }
 
  .container {
@@ -95,13 +89,13 @@ img {
     .container {
     max-width: 1200px; 
     margin: 0 auto;
-    flex-flow:  row wrap;
+    flex-flow: row wrap;
     }
 
     .container1 {
         max-width: 1200px; 
         margin: 0 auto;
-        flex-flow:  row wrap;
+        flex-flow: row wrap;
         }
     .produto {
         max-width: 28rem;
