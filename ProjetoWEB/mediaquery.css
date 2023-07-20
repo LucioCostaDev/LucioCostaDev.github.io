@@ -28,7 +28,31 @@
         grid-row: 4;
         /* declaro main como grid */
         display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 10px;
+    }
+    
+    main > p {
+        margin: 0;
+        grid-column: 1;  
+    }
 
+    aside {
+        grid-column: 1 / -1;
+        grid-row: 5;
+    }
 
+    .barra-inferior {
+        grid-column: 1 / -1;
+    }
+
+    .banner { 
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+    .rodape {
+        grid-column: 1 / -1;
     }
 }
