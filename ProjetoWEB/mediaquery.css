@@ -10,15 +10,25 @@
         grid-template-rows: 100px repeat(6, minmax(30px, auto));
         gap: 0 10px;
     }
-
+    
     .topo {
+        /* toda linha 1 que tem 8 col */
+        grid-column: 1 / -1;
+    }
+    
+    nav {
+        /* toda linha 1 que tem 8 col */
         grid-column: 1 / -1;
     }
 
-    nav {
-        grid-column: 1 / -1;
-    }
     main {
+        /* toda linha 1 que tem 8 col */
+        grid-column: 1 / -1;
+        /* porem vai para linha 4 toda  */
+        grid-row: 4;
+        /* declaro main como grid */
+        display: grid;
+
 
     }
 }
