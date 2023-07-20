@@ -56,19 +56,24 @@ img {
     width: 400px;
 }
 
- .container {
+.container {
     display: flex;
     flex-flow: column;
     justify-content: center;
- }
+}
 
- .container1 {
+.container1 {
     display: flex;
     flex-flow: column;
     justify-content: center;
- }
+}
 
- .produto {
+.container1 > header > p {
+    font-family: 'Play', sans-serif;
+    font-size: 2em;
+}
+
+.produto {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -80,7 +85,7 @@ img {
     max-width: 30rem;
     margin: 0 auto;
     margin-bottom: 0.8rem;
- }
+}
 
  @media all and (min-width: 35rem) {
     body {
