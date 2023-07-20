@@ -68,6 +68,12 @@ img {
     justify-content: center;
  }
 
+ .container1 {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+ }
+
  .produto {
     display: flex;
     flex-flow: row wrap;
@@ -91,6 +97,12 @@ img {
     margin: 0 auto;
     flex-flow:  row wrap;
     }
+
+    .container1 {
+        max-width: 1200px; 
+        margin: 0 auto;
+        flex-flow:  row wrap;
+        }
     .produto {
         max-width: 28rem;
         margin: 1rem;
