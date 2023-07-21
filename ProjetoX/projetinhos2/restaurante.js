@@ -7,7 +7,7 @@ frm.addEventListener("submit", (e) => {
     const quilo = Number(frm.inQuilo.value) //obtém conteúdo dos campos
     const consumo = Number(frm.inConsumo.value)
 
-    const valor = (quilo / 1000) * cosumo //calcula valor à ser pago
+    const valor = (quilo / 1000) * consumo //calcula valor à ser pago
     resp.innerText = `Valor a pagar R$: ${valor.toFixed(2)}` //exibe resposta obs.tofixed formata notação de ponto fixo
 
     e.preventDefault() // evita envio do form
