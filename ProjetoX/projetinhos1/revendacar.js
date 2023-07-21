@@ -22,7 +22,7 @@ frm.addEventListener("submit", (e) => {
     const parcela = (preco * 0.50) / 12 // ...e das parcelas
 
     resp1.innerHTML = `Promoção: ${veiculo}` // exibe as respostas
-    resp2.innerHTML = `Entrada de R$: ${entrada.toFixed}`
+    resp2.innerHTML = `Entrada de R$: ${entrada.toFixed(2)}`
     resp3.innerHTML = `+12x de R$ ${parcela.toFixed(2)}`
 
     e.preventDefault() // evita envio de form
