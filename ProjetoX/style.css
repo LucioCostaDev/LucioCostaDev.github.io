@@ -37,10 +37,14 @@ button {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    /* height: 50px; */
+    height: 40px;
     margin: auto 0 1rem auto;
     background-color: red;
     color: white;
+}
+
+button:hover {
+    background-color: black;
 }
 
 img {
@@ -86,6 +90,7 @@ img {
     max-width: 30rem;
     margin: 0 auto;
     /* margin-bottom: 1rem; */
+    box-shadow: 1px 1px 1px 1px rgb(128, 6, 6);
 }
 
  @media all and (min-width: 35rem) {
