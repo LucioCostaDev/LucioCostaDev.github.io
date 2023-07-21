@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Revenda de Car</title>
+    <link rel="shortcut icon" href="../imagens/faviprojectx.ico" type="image/x-icon">
 </head>
 <body>
-    
+    <form>
+        <p>Veículo:
+        <!-- obs. required especifica que um campo de entrada deve ser preenchido antes do envio -->
+        <input type="text" id="inVeiculo" required> 
+        </p>
+
+        <p>Preço R$: 
+        <input type="number" id="inPreco" required>
+        </p>
+        <input type="submit" value="Ver Promoção">
+    </form>
+    <h3 id="outResp1"></h3>
+    <h3 id="outResp2"></h3>
+    <h3 id="outResp3"></h3>
+    <script src="revendacar.js"></script>
+
 </body>
 </html>
