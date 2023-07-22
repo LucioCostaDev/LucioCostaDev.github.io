@@ -1,7 +1,7 @@
 // cria referência ao form e aos elementos de resposta (pelo seu id)
 const frm = document.querySelector("form")
-const resp1 = document.querySelector("outMedicamento")  // coloca a referência id declarada dentro de H3
-const resp2 = document.querySelector("outPromocao")
+const resp1 = document.querySelector("#outMedicamento")  // coloca a referência id declarada dentro de H3
+const resp2 = document.querySelector("#outPromocao")
 // const resp3 = document.querySelector("outResp3")
 
 
@@ -10,15 +10,11 @@ frm.addEventListener("submit", (e) => {
     const medicamento = frm.inMedicamento.value
     const preco = Number(frm.inPreco.value)
 
-    // const valor = preco
-    // const entrada = ( 1 / 100) * valor
-    // const desconto = entrada * 2
-
-    // calcula valor da promoção (arredonda para baixo)
+    //calcula valor da promoção (arredonda para baixo)
      const promocao = Math.floor(preco * 2)
 
     // exibe as respostas
-    resp1.innerText = `Medicamento: ${medicamento}`
+    resp1.innerText = `Promoção de ${medicamento}`
     resp2.innerText = `Leve 2 por apenas R$: ${promocao.toFixed(2)}`
 
     // resp2.innerHTML = `Valor R$: ${preco}`
