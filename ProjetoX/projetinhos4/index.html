@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Cinema</title>
+    <title>Lan House</title>
     <link rel="shortcut icon" href="../imagens/faviprojectx.ico" type="image/x-icon">
 </head>
 <body>
-   <a href="../index.html"><button>HOME</button></a>
-    <h1>Cine JS: Filmes em Cartaz</h1>
+    <header>
+        <a href="../index.html"><button>HOME</button></a>
+    </header>
     <form>
-            Título do Filme:
-            <input type="text" id="inTitulo" required>
+        <p>Valor por 15 minutos de uso R$:
+            <input type="number" id="inValor" required> <!--(!)required dados tem que ser validos para ser enviados-->
         </p>
-        <p>Duração (min):
-            <input type="number" id="inDuracao" required>
+        <p>Tempo de Uso do Cliente:
+            <input type="number" id="inTempo" required>
         </p>
-        <input type="submit" value="Converter em Horas e Minutos">
+        <p>
+            <input type="submit" value="Calcular Valor a Pagar">
+        </p>
     </form>
     <h3></h3>
-    <h4></h4>
-    <script src="ex2_2.js"></script>
 </body>
 </html>
