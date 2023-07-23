@@ -7,5 +7,10 @@ frm.addEventListener("submit", (e) => {
     const valor = Number(frm.inValor.value)
     const tempo = Number(frm.inTempo.value)
 
-    const valor
+    // calcula valor a pagar (arredonda para cima)
+    const pagar = Math.ceil(tempo / 15) * valor
+
+    //exibe o valor a pagar (com 2 decimais)
+    resp.innerText = `Valor a Pagar R$: ${pagar.toFixed(2)}`
+    e.preventDefault()
 })
