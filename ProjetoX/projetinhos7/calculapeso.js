@@ -6,8 +6,9 @@ const resp = document.querySelector("h3")
 frm.addEventListener("submit", (e) => {
     e.preventDefault()  // evita envio do form
 
-const nome = frm.inMasculino.checked
+const nome = frm.inNome.value // obtém o s valores do form
 const masculino = frm.inMasculino.checked // propriedade checked
+const altura = Number(frm.inAltura.value)
 
 let peso // declara a variavel peso 
 if (masculino){ // se masculino (ou, if masculino == true)
