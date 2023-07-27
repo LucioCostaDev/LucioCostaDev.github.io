@@ -1,24 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos X</title>
+    <title>Projetos</title>
+    <link rel="shortcut icon" href="../ProjetoX/imagens/faviprojectx.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Bem Vindos!!!!</h1>
 
-    <h2>Projetos X</h2>
-    <a href="./ProjetoPokelista/index.html">Pokelist</a>
-    <a href="./ProjetoAndroid/">Andoid</a>
-    <a href="./ProjetoAnime/">Anime</a>
-    <a href="./ProjetoApple/">Apple</a>
-    <a href="./ProjetoRJ/">Rio de Janeiro</a>
-    <a href="./SiteMediaQuery/index.html">Projeto Media Query</a>
-    <a href="./ProjetoLogin/index.html">Projeto Login</a>
-    <a href="./ProjetoX/index.html">ProjetoX</a>
-    <a href="./ProjetoWEB/index.html">Em Construção</a>
-    
+<!-- Criado para monitorar o tamnho visto que quando ocultava o menuburguer e aumentava tela não parecia mais os menus sumia -->
+<body onresize="mudouTamanho()">
+    <header>
+        <!-- JavaScript dentro do span, onclick="clickmenu() vai receber uma função ou seja faz uma chamada-->
+        <h1>PROJETOS</h1>
+        <span id="menuburguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        <!-- criação de id="itens faz referência a todas os ul e li de dentro do menu"-->
+        <menu id="itens">
+            <ul>
+                <li> <a href="../ProjetoAndroid/index.html" target="_blank">Project-Android</a></li>
+                <li> <a href="../ProjetoApple/index.html" target="_blank">Project-Apple</a></li>
+                <li> <a href="../ProjetoLogin/index.html" target="_blank">Project-Login</a></li>
+                <li> <a href="../ProjetoPokelista/index.html" target="_blank">Project-Pokelist</a></li>
+                <li> <a href="../ProjetoRJ/index.html" target="_blank">Project-RJ</a></li>
+                <li> <a href="../SiteMediaQuery/index.html" target="_blank">Project-Media</a></li>
+                <li> <a href="../ProjetoX/index.html" target="_blank">Project-X</a></li>
+            </ul>
+        </menu>
+        
+    </header>
+    <main>
+        <article>
+            <h2>PROJETOS</h2>
+            <p>Aqui tem uns projetos da caminha de aprendizados</p>
+        </article>
+        
+    </main>
+    <div>
+        <img src="imagens/nomedev.png" alt="" srcset="">
+    </div>
+    <footer>
+        <div class="rodape">
+           <a href="https://github.com/LucioCostaDev" target="_blank">Site criado por LucioCostaDEV</a>
+        </div>
+    </footer>
+    <script>
+        // criação de uma estrutura condicional para averiguar largura da pagina
+        function mudouTamanho() {
+            if  (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
 
+        // <!-- criação de script para efeito de menu burger -->
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
 </body>
 </html>
