@@ -1,4 +1,5 @@
-![titulo_github](https://github.com/LucioCostaDev/ProjectDev/assets/114632393/ebd6554c-9b18-4d90-985f-a57c66a6f826)
+![nomedev](https://github.com/LucioCostaDev/LucioCostaDev.github.io/assets/114632393/a4469ff8-b96f-42e2-93b8-5435aca52c91)
+
 <p align="center">Aqui são projetos de aprendizados</p>
 
 Estou atualmente me formando em Análise e Desenvolvimento de Sistema é com isso buscando me aprimorar para o mercado de trabalho.
