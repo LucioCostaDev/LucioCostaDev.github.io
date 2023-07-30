@@ -48,7 +48,8 @@ button:hover {
 }
 
 img {
-    width: 100px;
+    display: flex;
+    width: 100px;  
 }
 
 
