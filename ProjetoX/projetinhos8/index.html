@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+        <button class="btnhome"><a href="../index.html"></a>HOME</button>
       <h1>Conversor de Unidades</h1>
       <div class="input-group">
         <label for="input">Digite a quantidade:</label>
@@ -42,5 +43,31 @@
     </div>
   </body>
 </html>
+
+<!-- 
+   Explicação 
+
+div.input-group é um contêiner para o menu suspenso e o botão.
+
+label for="to">Para:</label é um rótulo para o menu suspenso.
+
+select id="to" é um menu suspenso com as seguintes opções:
+Metros)
+Quilômetro(s)
+Centímetro(s)
+Milímetro(s)
+
+button id="convert-btn">Converter</button é um botão que aciona a conversão da quantidade.
+
+div.output-group é um contêiner para o campo de saída.
+
+label for="output">Resultado:</label é um rótulo para o campo de saída.
+
+input type="text" id="output" readonly é um campo de entrada que exibe a quantidade convertida. 
+O atributo readonly torna o campo somente leitura, portanto, o usuário não pode alterar o valor do campo.
+
+div id="message"></div é um contêiner para uma mensagem que será exibida após a conclusão da conversão.
+
+ -->
 
 

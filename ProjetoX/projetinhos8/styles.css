@@ -1,32 +1,63 @@
+
+/* todo conteudo vai sofrer alteração */
 * {
+    /* especifica que a largura e a altura de um elemento devem incluir a borda e o preenchimento */
   box-sizing: border-box;
+  /* Isso significa que não haverá espaço entre o elemento e seus elementos adjacentes. */
   margin: 0;
+  /* Isso significa que não haverá espaço entre o conteúdo do elemento e suas bordas. */
   padding: 0;
 }
 
 body {
+    /* tipo de fonte  */
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  /* fundo do corpo */
+  background-color: #920e0e;
+  /*contêiner que permite que seus elementos filhos sejam organizados de maneira flexível */
   display: flex;
+  /* align e justify Este código centralizará o flex container tanto no eixo transversal quanto no eixo principal.*/
   align-items: center;
   justify-content: center;
+  /* altura 100% da página  */
   height: 100vh;
 }
 
+/* é uma ferramenta poderosa que pode ser usada para estilizar contêineres flexíveis de várias maneiras.  */
 .container {
+  display: grid;
+  /* Cor da container */
   background-color: #fff;
+  /* Cria uma borda arredandada */
   border-radius: 10px;
+  /* da um efeito no container */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* usada para adicionar preenchimento a todos os quatro lados de um elemento ou a lados específicos de um elemento. */
   padding: 20px;
+  /* Largura */
   width: 400px;
 }
 
+/* estilização do h1 */
 h1 {
+    /* tamanho da fonte */
   font-size: 24px;
+  /* distanciamento  */
   margin-bottom: 20px;
+  /* alinhamento do texto no centro */
   text-align: center;
 }
 
+.btnhome {
+    display: block;
+    background-color: rgb(145, 17, 17);
+    color: rgb(236, 230, 230);
+    align-items: top;
+    justify-items: top;
+
+}
+
+/* classe  */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -49,7 +80,7 @@ input[type="text"] {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #bb3e28;
   border-radius: 5px;
   border: none;
   color: #fff;
