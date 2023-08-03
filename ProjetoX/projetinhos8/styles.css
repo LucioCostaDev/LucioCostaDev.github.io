@@ -13,9 +13,9 @@ body {
     /* tipo de fonte  */
   font-family: Arial, sans-serif;
   /* fundo do corpo */
-  background-color: #920e0e;
+  background-color: #cabebe;
   /*contêiner que permite que seus elementos filhos sejam organizados de maneira flexível */
-  display: flex;
+  display: grid;
   /* align e justify Este código centralizará o flex container tanto no eixo transversal quanto no eixo principal.*/
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@ body {
 }
 
 /* é uma ferramenta poderosa que pode ser usada para estilizar contêineres flexíveis de várias maneiras.  */
-.container {
+.container1 {
   display: grid;
   /* Cor da container */
   background-color: #fff;
@@ -38,6 +38,55 @@ body {
   width: 400px;
 }
 
+.container {
+    display: grid;
+    /* Cor da container */
+    justify-content: center;
+    background-color: #fff;
+    /* Cria uma borda arredandada */
+    border-radius: 10px;
+    /* da um efeito no container */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    /* usada para adicionar preenchimento a todos os quatro lados de um elemento ou a lados específicos de um elemento. */
+    padding: 20px;
+    /* Largura */
+    width: 400px;
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+}
+  
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+nav li {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    /* justify-content: space-between; */
+}
+  
+nav a {
+    color: #bb3e28;
+    padding: 10px;
+    border-radius: 5px;
+    /* text-decoration para tirar o sublilhado */
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+  }
+  
+nav a:hover {
+    background-color: #b4412d;
+    color: #000;
+
+}
+
 /* estilização do h1 */
 h1 {
     /* tamanho da fonte */
@@ -48,13 +97,8 @@ h1 {
   text-align: center;
 }
 
-.btnhome {
-    display: block;
-    background-color: rgb(145, 17, 17);
-    color: rgb(236, 230, 230);
-    align-items: top;
-    justify-items: top;
-
+a {
+    text-decoration: none;
 }
 
 /* classe  */
@@ -79,7 +123,7 @@ input[type="text"] {
   background-color: #eee;
 }
 
-button {
+.container1 > button {
   background-color: #bb3e28;
   border-radius: 5px;
   border: none;

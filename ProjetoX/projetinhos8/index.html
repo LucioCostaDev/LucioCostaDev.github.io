@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Unidades</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js" defer></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-        <button class="btnhome"><a href="../index.html"></a>HOME</button>
-      <h1>Conversor de Unidades</h1>
-      <div class="input-group">
-        <label for="input">Digite a quantidade:</label>
-        <input type="number" id="input" placeholder="0" />
-      </div>
-      <div class="input-group">
-        <label for="from">De:</label>
-        <select id="from">
-          <option value="m">Metro(s)</option>
-          <option value="km">Quilômetro(s)</option>
-          <option value="cm">Centímetro(s)</option>
-          <option value="mm">Milímetro(s)</option>
-        </select>
-      </div>
-      <div class="input-group">
-        <label for="to">Para:</label>
-        <select id="to">
-          <option value="m">Metro(s)</option>
-          <option value="km">Quilômetro(s)</option>
-          <option value="cm">Centímetro(s)</option>
-          <option value="mm">Milímetro(s)</option>
-        </select>
-      </div>
-      <button id="convert-btn">Converter</button>
-      <div class="output-group">
-        <label for="output">Resultado:</label>
-        <input type="text" id="output" readonly />
-      </div>
-      <div id="message"></div>
+        <nav>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="https://github.com/LucioCostaDev" target="_blank">Contato</a></li>
+            </ul>
+          </nav>
     </div>
-  </body>
+    <div class="container1">
+        <h1>Conversor de Unidades</h1>
+        <div class="input-group">
+            <label for="input">Digite a quantidade:</label>
+            <input type="number" id="input" placeholder="0" />
+        </div>
+        <div class="input-group">
+            <label for="from">De:</label>
+            <select id="from">
+                <option value="m">Metro(s)</option>
+                <option value="km">Quilômetro(s)</option>
+                <option value="cm">Centímetro(s)</option>
+                <option value="mm">Milímetro(s)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="to">Para:</label>
+            <select id="to">
+                <option value="m">Metro(s)</option>
+                <option value="km">Quilômetro(s)</option>
+                <option value="cm">Centímetro(s)</option>
+                <option value="mm">Milímetro(s)</option>
+            </select>
+        </div>
+        <button id="convert-btn">Converter</button>
+        <div class="output-group">
+            <label for="output">Resultado:</label>
+            <input type="text" id="output" readonly />
+        </div>
+        <div id="message"></div>
+    </div>
+</body>
+
 </html>
 
 <!-- 
@@ -69,5 +79,3 @@ O atributo readonly torna o campo somente leitura, portanto, o usuário não pod
 div id="message"></div é um contêiner para uma mensagem que será exibida após a conclusão da conversão.
 
  -->
-
-
