@@ -33,7 +33,7 @@ body {
   /* da um efeito no container */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   /* usada para adicionar preenchimento a todos os quatro lados de um elemento ou a lados específicos de um elemento. */
-  padding: 20px;
+  padding: 1.5rem;
   /* Largura */
   width: 400px;
 }
@@ -51,6 +51,9 @@ body {
     padding: 20px;
     /* Largura */
     width: 400px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+   
 }
 
 nav {
@@ -101,15 +104,21 @@ a {
     text-decoration: none;
 }
 
-/* classe  */
+/* classe onde tem os inputs */
 .input-group {
+  /* ficam um abaixo do outro */
   display: flex;
+  /* em coluna */
   flex-direction: column;
+  /* espaçamento */
   margin-bottom: 15px;
 }
 
+/* classe onde tem os inputs */
 .input-group label {
+  /* label a legenda das caixas */
   margin-bottom: 5px;
+  /* deixa destacada a letras */
   font-weight: bold;
 }
 
@@ -118,6 +127,7 @@ input[type="number"],
 input[type="text"] {
   padding: 10px;
   border-radius: 5px;
+  /* tira a borda das caixas */
   border: none;
   font-size: 16px;
   background-color: #eee;
@@ -139,12 +149,14 @@ button:hover {
   opacity: 1;
 }
 
+/* classe do resultado */
 .output-group {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
 
+/* classe do resultado */
 .output-group label {
   margin-bottom: 5px;
   font-weight: bold;

@@ -1,12 +1,27 @@
 // Obter referências aos elementos HTML
-const inputElement = document.querySelector("#input");
-const fromElement = document.querySelector("#from");
-const toElement = document.querySelector("#to");
-const outputElement = document.querySelector("#output");
-const convertButton = document.querySelector("#convert-btn");
-const messageElement = document.querySelector("#message");
 
-// Função para converter as unidades
+/* const é uma palavra-chave que declara que a variável inputElement é constante, o que significa que seu valor não pode ser alterado.
+
+inputElement é o nome da variável.
+
+= é o operador de atribuição.
+
+document.querySelector("#input"); é o valor que está sendo atribuído à variável inputElement.
+
+document é um objeto que representa o documento HTML atual.
+
+querySelector() é um método no objeto document que é usado para retornar o primeiro elemento que corresponde a um determinado seletor CSS.
+
+#input é um seletor CSS que corresponde a um elemento com o ID input. */
+
+const inputElement = document.querySelector("#input");
+const fromElement = document.querySelector("#from"); /* e o tipo de dado  */
+const toElement = document.querySelector("#to"); /* i tipo de dado que vai ser convertido */
+const outputElement = document.querySelector("#output"); /* os dados de saida */
+const convertButton = document.querySelector("#convert-btn"); /* o botão que vai fazer a a ação */
+const messageElement = document.querySelector("#message"); /* aqui e a mensagem que vai aparecer */
+
+// cração de uma função para converter as unidades
 function convert() {
   // Obter os valores das unidades de entrada e saída
   const fromValue = fromElement.value;
