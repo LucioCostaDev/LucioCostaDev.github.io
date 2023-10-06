@@ -1,0 +1,13 @@
+img {
+    /* defini que as imagens vão ficar alinhadas a esquerda */
+    float: left;
+    /* tamanho  */
+    height: 300px;
+    /* largura */
+    width: 300px;
+}
+
+h1 {
+    /* cria uma linha horizontal que separa o cabeçalho do restante da página */
+    border-bottom-style: inset;
+}
