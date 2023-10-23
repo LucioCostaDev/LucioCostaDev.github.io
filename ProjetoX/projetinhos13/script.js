@@ -9,13 +9,13 @@ frm.addEventListener("submit", (e) => {
     if (saque % 10 != 0) {
     alert("Valor inválido para notas disponíveis (R$ 10, 50, 100)")
     frm.inSaque.focus()
-        return
+    return
     }
-    const notaCem = Math.floor(saque / 100)
+    const notasCem = Math.floor(saque / 100)
     let resto = saque % 100
     const notasCinquenta = Math.floor(resto / 50)
     resto = resto % 50
-    const notaDez = Math.floor(resto / 10)
+    const notas5Dez = Math.floor(resto / 10)
     if (notasCem > 0) {
         resp1.innerText = `Notas de R$ 100: ${notasCem}`
     }
