@@ -15,7 +15,7 @@ frm.addEventListener("submit", (e) => {
     let resto = saque % 100
     const notasCinquenta = Math.floor(resto / 50)
     resto = resto % 50
-    const notas5Dez = Math.floor(resto / 10)
+    const notasDez = Math.floor(resto / 10)
     if (notasCem > 0) {
         resp1.innerText = `Notas de R$ 100: ${notasCem}`
     }
