@@ -11,7 +11,14 @@ function updateProgressBar() {
 function nextStep() {
     progress += 10;
     if (progress > 100) progress = 100;
-    updateProgressBar()
+    updateProgressBar();
+}
+
+function previuosStep() {
+    progress -= 10;
+    if (progress < 0) progress = 0;
+    updateProgressBar();
 }
 
 nextBtn.addEventListener("click", nextStep);
+previousBtn.addEventListener("click", previuosStep);
