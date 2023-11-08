@@ -1,0 +1,15 @@
+body {
+    background-color: black ;
+}
+
+main .personalizados {
+    display: none;
+}
+
+main .personalizacao .imagem {
+    display: block;
+}
+
+main .personalizacao .imagem .logo {
+    width: 300;
+}
