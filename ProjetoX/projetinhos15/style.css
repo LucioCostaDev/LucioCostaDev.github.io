@@ -44,7 +44,7 @@ input,textarea  {
     margin-top: 0.2rem;
 }
 
-button {
+.btnsubmit {
     background-color: blue;
     color: white;
     padding: 0.6rem 1.2rem;
@@ -54,11 +54,22 @@ button {
     cursor: pointer;
     transition: 0.4;
 }
- .btnhome {
-    
+
+.btnhome{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.topo{
+    margin: 0 auto;
+    padding: 5px;
+    justify-content: center;
+    color: white;
+    background-color: rgb(21, 21, 168);
  }
 
-button:hover {
+.btnsubmit:hover {
     background-color: rgb(21, 21, 168);
 }
 
