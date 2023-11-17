@@ -13,6 +13,7 @@
 
 h1 {
     text-align: center; /* centralizar o elemento */
+    margin-bottom: 1rem;
 }
 
 form {
@@ -31,16 +32,38 @@ label {
     font-weight: bold; /* titulo da caixas deixar em negrito */
 }
 
-input, 
-textarea {
+input,textarea  {
     padding: .6rem;
-    border: 1px solid white;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
 }
 
 .error-message {
-
+    color: red;
+    margin-top: 0.2rem;
 }
 
+button {
+    background-color: blue;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.4;
+}
+ .btnhome {
+    
+ }
+
+button:hover {
+    background-color: rgb(21, 21, 168);
+}
+
+.error input,
+.error textarea {
+    border-color: red;
+}
 
