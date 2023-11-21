@@ -1,0 +1,10 @@
+img {
+    margin: 50px;
+    float: left;
+    height: 300px;
+    width: 300px;
+}
+
+h1 {
+    border-bottom-style: inset;
+}
