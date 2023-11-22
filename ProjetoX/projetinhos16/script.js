@@ -14,4 +14,6 @@ frm.addEventListener("submit", (e) => {           // "escuta evento submit do fo
         resp.innerText = `${numero} é impar`  // ...é impar
     }
     
+    // const resposta = numero % 2 ? "é impar" : "é par"
+    // resp.innerText = `${numero} ${resposta}`
 })
