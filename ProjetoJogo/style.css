@@ -1,0 +1,101 @@
+/* reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* para conseguir ver visualizar o que vai acontecer */
+.game-board {
+    /* definir 80% da tela */
+    width: 80%; 
+    /* tamanho */
+    height: 500px;
+    /* para ver o espaço  */
+    border: 1px solid #333;
+    /* centraliza o border */
+    margin: 0 auto;
+    /* Para a imagem respeitar o contorno da caixa vai ser utilizado position: relativo*/
+    position: relative;
+    /* a propriedade overflow: hidden serve pra que todo objeto que sair da tela suma ou seja desaparece */
+    overflow: hidden;
+}
+
+/* foi criado uma classe barreira */
+.barreira {
+    /* Como vai ser usado várias imagens independentes vai ser utilizado position: absolute para que nenhuma interfira no comportamento da outra*/
+    position: absolute;
+    /* foi utilizado o botton: 0 para descer a imagem */
+    bottom: 0;
+    /* tamanho da Imagem */
+    width: 80px;
+    /* Vai iniciacr na direta da caixa, a propriedade right: 0 à ?? e o que da a possibilidade de movimenta para a direita <-- um objeto de acordo com o valor colocado ou ajustado realizando movimento e uma observação quando se coloca 100% o objeto sai da borda o que torna legal a utilização para esconder o objeto criando um efeito*/
+    /* right: 0; por uma questão didatica e para não interferi nos resultado esse right não vai ser usado */
+
+    /* esse right negativo e a forma com qual o objeto vai transcorrer de forma como se tivesse vindo de fora da caixa e não aparecendo de dentro da caixa na animação ou seja dentro da animação ficara negativo
+    right: -80px; */
+
+    /* A propriedade left vai ser definida para caso a animação do goku encoste defina como perdido, ou seja vai ser deifnido um valor no qual proximo da barreira identifique e informe  */
+    left: 60px;
+
+    /* propriedade animation: faz a animação acontecer, o valor infinite: deixa inifinito a animação, o valor linear faz a movimentação ocorrer fluidamente sem pausas */
+    animation: barreira-animation 3s infinite linear;
+}
+
+.goku {
+    /* definindo o tamanho do goku */
+    width: 120px;
+    /* definido o postion: absolute para as imagens não seja interferidas por outras devido animação */
+    position: absolute;
+    /* para colocar a imagem na parte de baixo porém e preciso criar um efeito de pulo  */
+    bottom: 0;
+
+    /* propriedade para definir uma animação com os valores infinite: que coloca inifinito e ease-out: da uma fluidez no pulo
+    animation: jump 1s infinite ease-out; */
+}
+
+/* criação de uma classe para que a animação seja executada de acordo que for clicado */
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+/* criação da animação e uma observação definir por onde vai começar*/
+@keyframes barreira-animation {
+    /* definindo ponto de partida (iniciando) */
+    from{
+        right: -80px;
+    }
+
+    /* onde vai termina */
+    to {
+        right: 100%;
+    }
+}
+
+/* animação de pulo que vai ter tres etapas inicio > meio > fim e está sendo realizado de outro forma */
+@keyframes jump {
+    
+    /* inicio */
+    0% {
+        bottom: 0;
+    }
+
+    /* inicio meio */
+    40% {
+        bottom: 170px;
+    }
+
+    /* meio */
+    50% {
+        bottom: 170px;
+    }
+
+    /* meio fim */
+    60% {
+        bottom: 170px;
+    }
+    /* fim */
+    100% {
+        bottom: 0;
+    }
+}
