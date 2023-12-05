@@ -33,7 +33,8 @@ const loop = setInterval(() => {
     console.log(gokuPosition);
 
     //verificação se o deslocamento da direita for menor ou igual a 60 perde
-    if (barreiraPosition =  120 && barreiraPosition > 0 &&  barreiraPosition < 80) {
+        // p.de.bater                p.pós.pulo           tam.do.pulo.marior.barreira
+    if (barreiraPosition <= 60 && barreiraPosition > 0 && gokuPosition < 60) {
         //isso interrompe a animação do elemento barreira
         barreira.style.animation = 'none';
         /* A linha barreira.style.left =${barreiraPosition}; define a propriedade CSS left  do elemento barreira para o valor atual de barreiraPosition. Isso significa que o elemento barreira será posicionado no valor atual de barreiraPosition. */
@@ -42,7 +43,14 @@ const loop = setInterval(() => {
         goku.style.animation = 'none';
         goku.style.bottom = `${gokuPosition}px`;
 
-        // goku.scr = '.'
+        //troca a imagem diretamente 
+        goku.src = 'imagens/derrota1.gif';
+        //tamanho diretamente
+        goku.style.width = '60px'
+        //margens diretamente
+        goku.style.marginLeft = '50px'
+        // termina o loop
+        clearInterval(loop);
     }
 
 }, 10);

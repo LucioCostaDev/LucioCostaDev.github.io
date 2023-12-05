@@ -7,18 +7,29 @@
 
 /* para conseguir ver visualizar o que vai acontecer */
 .game-board {
-    /* definir 80% da tela */
-    width: 80%; 
+    /* definir 80% da tela iniciado didatico*/
+    /* width: 80%; 
+
+    /* FINAL PROJETO STILIZAÇÃO */
+    width: 100%;
+
     /* tamanho */
     height: 500px;
-    /* para ver o espaço  */
-    border: 1px solid #333;
+    /* para ver o espaço inicio projeto */
+    /* border: 1px solid #333; */
+
+    /* FINAL PROJETO ESTILIZAÇÃO */
+    border-bottom: 15px solid burlywood;
+
     /* centraliza o border */
     margin: 0 auto;
     /* Para a imagem respeitar o contorno da caixa vai ser utilizado position: relativo*/
     position: relative;
     /* a propriedade overflow: hidden serve pra que todo objeto que sair da tela suma ou seja desaparece */
     overflow: hidden;
+
+    /* FINAL PROJETO ESTILIZAÇÃO */
+    background: linear-gradient(blue, white); 
 }
 
 /* foi criado uma classe barreira */
@@ -37,10 +48,10 @@
     right: -80px; */
 
     /* A propriedade left vai ser definida para caso a animação do goku encoste defina como perdido, ou seja vai ser deifnido um valor no qual proximo da barreira identifique e informe  */
-    /* left: 60px;      */
+    /* left: 80px;      */
 
     /* propriedade animation: faz a animação acontecer, o valor infinite: deixa inifinito a animação, o valor linear faz a movimentação ocorrer fluidamente sem pausas */
-    animation: barreira-animation 1s infinite linear;
+    animation: barreira-animation 2s infinite linear;
 }
 
 .goku {
@@ -51,13 +62,19 @@
     /* para colocar a imagem na parte de baixo porém e preciso criar um efeito de pulo  */
     bottom: 0;
 
-    /* propriedade para definir uma animação com os valores infinite: que coloca inifinito e ease-out: da uma fluidez no pulo
-    animation: jump 1s infinite ease-out; */
+    /* propriedade para definir uma animação com os valores infinite: que coloca inifinito e ease-out: da uma fluidez no pulo */
+    /* animation: jump 1s infinite ease-out; */
 }
 
 /* criação de uma classe para que a animação seja executada de acordo que for clicado */
 .jump {
     animation: jump 600ms ease-out;
+}
+
+.paissagem {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
 }
 
 /* criação da animação e uma observação definir por onde vai começar*/
@@ -83,20 +100,30 @@
 
     /* inicio meio */
     40% {
-        bottom: 200px;
+        bottom: 180px;
     }
 
     /* meio */
     50% {
-        bottom: 210px;
+        bottom: 180px;
     }
 
     /* meio fim */
     60% {
-        bottom: 200px;
+        bottom: 180px;
     }
     /* fim */
     100% {
         bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
     }
 }
