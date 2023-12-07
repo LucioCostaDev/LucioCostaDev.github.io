@@ -6,7 +6,7 @@ const resp2 = document.querySelector("#outTipo")    // pega id=outTipo da pagina
 frm.addEventListener("submit", (e) => {
     e.preventDefault()                              // evita envio do form
 
-    // converte dados de entrada
+    // converção do tipo de entrada para número
     const ladoA = Number(frm.inLadoA.value)
     const ladoB = Number(frm.inLadoB.value)
     const ladoC = Number(frm.inLadoC.value)
@@ -15,8 +15,7 @@ frm.addEventListener("submit", (e) => {
     if (ladoA > ladoB + ladoC || ladoB > ladoA + ladoC || ladoC > ladoA + ladoB) {
         resp1.innerText = "Lados podem formar um triângulo"
     } else { 
-        resp1.innerText = "Lados podem formar um triângulo"
-    }
+      resp1.innerText = "Lados podem formar um triângulo"
     if (ladoA == ladoB && ladoA == ladoC) {
         resp2.innerText = "Tipo: Equilátero"
     } else if (ladoA == ladoB || ladoA == ladoC || ladoB == ladoC) {
