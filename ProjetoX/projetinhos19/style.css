@@ -3,6 +3,8 @@ img {
     height: 200px;
     width: 200px;
 }
- h1 {
+
+h1 {
     border-bottom-style: inset;
- }
+}
+
