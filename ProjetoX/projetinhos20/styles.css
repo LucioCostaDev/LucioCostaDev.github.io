@@ -38,7 +38,7 @@ h1 {
 
 /* container que vai conter a cores */
 .colors div {
-    background-color: red;
+    /* background-color: red; */
     width: 100px;
     height: 100px;
     margin: 0 0.5rem;
