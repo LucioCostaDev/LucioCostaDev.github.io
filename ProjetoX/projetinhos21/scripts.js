@@ -49,4 +49,4 @@ function copiarCPF() {
 
 // criação de eventos para gerar ao clicar 
 gerarCpfBtn.addEventListener("click", gerarCPF);
-copiarCpfBtn.addEventListener("click", copiarCPF)
+copiarCpfBtn.addEventListener("click", copiarCPF);
