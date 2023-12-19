@@ -8,17 +8,20 @@
     <link rel="shortcut icon" href="../imagens/faviprojectx.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-    <a href="../index.html"><button>HOME</button></a>
+<a href="../index.html"><button class="glow-on-hover" type="button">HOME</button></a>
+
 <body>
     <img src="../imagens/crescedescrico.jpeg" alt="imagem ordem" class="alta">
     <h1>Ordem Crescente e Descrecernte</h1>
-    <form>
-        <P>Número:
-            <input type="number" id="inNumero" required>
-        </P>
-        <input type="submit" value="Mostrar ordem crescente">
+    <form action="/" method="post">
+        <input type="number" name="numeroOpcao" placeholder="Digite um número" required>
+        <input type="radio" name="opcao" value="decrescente"> Decrescente
+        <input type="radio" name="opcao" value="crescente"> Crescente
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
     </form>
     <h3></h3>
     <script src="script.js"></script>
 </body>
+
 </html>
