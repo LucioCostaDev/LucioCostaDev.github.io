@@ -1,0 +1,34 @@
+/* Como padrão todos navegadores por padrão colocam margens e espaçamentos */
+
+* {
+    /* tirar as margens dos lados externos */
+    margin: 0;
+    /* tirar espaçamentos internos */
+    padding: 0;
+    /* cria borda para identificação de tags*/
+    box-sizing: ;
+}
+
+body {
+
+}
+
+header {
+
+}
+
+nav {
+
+}
+
+main {
+
+}
+
+aside {
+
+}
+
+footer {
+    
+}
