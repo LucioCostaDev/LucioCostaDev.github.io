@@ -1,0 +1,57 @@
+/* Como padrão todos navegadores por padrão colocam margens e espaçamentos */
+
+* {
+    /* tirar as margens dos lados externos */
+    margin: 0;
+    /* tirar espaçamentos internos */
+    padding: 0;
+    /* cria borda para identificação de tags*/
+    box-sizing: border-box;
+}
+
+/* todos elementos vão ser considerados flexiveis */
+/* Container ou Elmento pai - tem como objetivo agrupar */
+/* Itens ou elementos filhos são os containeres internos  */
+/* shortcut: flex: shrink(1) grow(1) basis(100vx)view port ou seja toda tela */
+body {
+display: flex;
+/* faz com que fique um abaixo do outro */
+flex-wrap: wrap;
+margin: 3px;
+flex: 1 1 100;
+}
+
+header {
+display: flex;
+margin: 3px;
+flex: 1 1 100vw;
+background: #a1a1a1;
+}
+
+nav {
+display: flex;
+margin: 3px;
+flex: 1 1 100vw;
+background: #a1a1a1;
+}
+
+main {
+display: flex;
+margin: 3px;
+flex: 1 1 100vw;
+background: #a1a1a1;
+}
+
+aside {
+display: flex;
+margin: 3px;
+flex: 1 1 100vw;
+background: #a1a1a1;
+}
+
+footer {
+display: flex;
+margin: 3px;
+flex: 1 1 100vw;
+background: #a1a1a1;
+}

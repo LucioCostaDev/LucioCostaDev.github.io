@@ -1,0 +1,97 @@
+/* Como padrão todos navegadores por padrão colocam margens e espaçamentos */
+
+* {
+    /* tirar as margens dos lados externos */
+    margin: 0;
+    /* tirar espaçamentos internos */
+    padding: 0;
+    /* cria borda para identificação de tags*/
+    box-sizing: border-box;
+}
+
+/* todos elementos vão ser considerados flexiveis */
+/* Container ou Elmento pai - tem como objetivo agrupar */
+/* Itens ou elementos filhos são os containeres internos  */
+/* shortcut: flex: shrink(1) grow(1) basis(100vx)view port ou seja toda tela */
+body {
+display: flex;
+/* faz com que fique um abaixo do outro */
+flex-wrap: wrap;
+margin: 3px;
+flex: 1 1 100;
+}
+
+/* devido as formatações se repetir nos elementos vai ser criado uma base para se minimizar as repetições de propriedade com isso deixando mais compacta */
+
+/* Caso queira criar um site que não apresente a barra de rolamento vertical e preciso criar uma largura ou altura fixas para os elementos */
+header, nav, main, aside, footer {
+    display: flex;
+    margin: 3px;
+    background: #a1a1a1;
+}
+
+header {
+flex: 1 1 100vw;
+/* aqui vai possuir uma altura fixa */
+height: 100px;
+}
+
+nav {
+flex: 1 1 200px;
+}
+
+/* Aqui vai ser utilizado a função calc */
+main {
+/* vai crescer 20x mais que os outros */
+flex: 20 1 500px;
+/* calc para realizar um distribuição de tela 
+header = 100px
+footer = 100px 
+Margin = (3px + 3px)* 4 = 24 
+100px + 100px + 24px = 224px*/
+height: calc(100vh - 224px);
+}
+
+aside {
+flex: 1 1 200px;
+}
+
+footer {
+flex: 1 1 100vw;
+/* aqui vai possuir uma altura fixa */
+height: 100px;
+}
+
+/* E possivel utilizando a ferramento de desenvolvedor saber o momento exato da transição de no qual a barra de rolagem e criada e com isso e possivel criar uma regra media no qual e possivel para modificar o estilo de uma pagina 
+regra @media 
+- Largura e altura da janela de visualização
+- Largura e altura do dispositivo
+- Orientação ( o tablet / smartphone está no modo paisagem ou retrato
+- resolução */
+
+/* nessa aplicação vai verificar se a tela não e maior que 923px se for positivo não e nescessario coloca todas as propriedades anteriormente apenas a que vão haver mudanças */
+@media only screen and (max-width: 923px) {
+    /* main devera sofrer uma redução de + 100px definido no aside + 3px da margem anterior qeu resulta em 330px */
+    main {
+        height: calc(100vh - 330px);
+    }
+
+    aside {
+        /* vai ter a propriedade flex para oculpar 100% da tela horizontal e ter uma altura fixa de 100px */
+        flex: 1 1 100vh;
+        height: 100px;
+    }
+}
+
+/* Uma nova regra para nav e mais quando os mesmos não caibam na mesma linha */
+@media only screen and (max-width: 717px) {
+    nav {
+        /* terá uma largura fixa */
+        height: 100px;
+    }
+
+    /* Aqui a main vai descontar os 100px  */
+    main {
+        height: calc(100vh - 436px);
+    }
+}
