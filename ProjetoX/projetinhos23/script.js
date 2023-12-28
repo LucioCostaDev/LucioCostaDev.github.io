@@ -28,11 +28,17 @@ frm.addEventListener("submit", (e) => {
 
   if (opcao === "decrescente") {
     for (let i = numeroOpcao; i > 0; i = i - 1) {
-      resposta = resposta + i + ", "
+      // resposta = resposta + i + ", "
+      // resposta = resposta + i + "."
+      resposta = `${resposta}${i},`
+      // resposta = resposta `${resposta}${i}.`
     }
   } else {
     for (let i = 1; i <= numeroOpcao; i = i + 1) {
-      resposta = resposta + i + ", "
+      // resposta = resposta + i + ", "
+      // resposta = resposta + i + "."
+      resposta = `${resposta}${i},` // template string
+      // resposta = resposta `${resposta}${i}.` // template string
     }
   }
   resp.innerText = resposta
