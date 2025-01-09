@@ -1,0 +1,1 @@
+var sorteio = Math.floor(Math.random()) *  9 
