@@ -3,9 +3,16 @@ margin: 0;
 padding: 0;
 }
 
-.grid .col {
-    display:inline-flex;
-    width: 150px;
-    height: 150px;
-    background: red;
+.container {
+    display: grid;
+    grid-template-columns: 100px 50px 80px 200px;
+    grid-template-rows: 80px 100px 100px;
+    background-color: brown;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+    
 }
