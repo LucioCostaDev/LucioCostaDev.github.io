@@ -3,8 +3,23 @@
     padding: 0;
 }
 
-#container {
-    display: grid;
+header{
+    grid-area: cabecalho;
 }
 
+nav{
+    grid-area: nav;
+}
 
+main {
+    grid-area: conteudo;
+}
+
+footer{
+    grid-area: rodape;
+ 
+}
+
+body {
+    display: grida;
+}
