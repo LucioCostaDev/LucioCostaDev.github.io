@@ -1,72 +1,56 @@
-* {
-    margin: 0;
-    padding: 0;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
 }
 
-/* aplicação de layout para oraganização do teplate site*/
-
-header{
-    grid-area: cabecalho; /* definição de nomes para organização */
-    background-color: blue;
-}
-
-nav{
-    grid-area: navegacao;
-    background-color: blueviolet;
+header {
+    background-color: #444;
+    padding: 10px;
 }
 
 main {
-    grid-area: conteudo;
-    background-color: brown;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-/*Teste para adicionar 3 colunas com conteudo*/
-section {
-    grid-area: conteudo1;
-    background-color: yellow;
+.formulario, .ficha-exibicao {
+    border: 1px solid white;
+    padding: 20px;
+    width: 40%;
+    background-color: #333;
+    border-radius: 10px;
 }
 
-/*Teste para adicionar 3 colunas com conteudo*/
-aside {
-    grid-area: conteudo2;
-    background-color: orangered;
+label, input, select {
+    display: block;
+    margin: 5px auto;
 }
 
-footer{
-    grid-area: rodape;
-    background-color: green;
-
+input, select {
+    padding: 5px;
+    width: 80%;
+    text-align: center;
 }
 
-body {
-    display: grid;
-    min-height: 100vh; /*vai ocupa a altura inteira de tela*/
-    /* grid-template-columns: 300px 1fr; duas colunas uma com 300px a o utra que vai ocupa o restante da tela */
-    grid-template-columns: 300px 450px 300px 300px; /*teste para adicionar 3 colunas*/
-    grid-template-rows: 100px 1fr 100px;
-    grid-template-areas: 
-        'cabecalho cabecalho cabecalho cabecalho'
-        'navegacao conteudo conteudo1 conteudo2'
-        'rodape rodape rodape rodape';      
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
 }
 
-/* criação de reponsabilidade de tela */
-@media(max-width: 700px) {
-    body {
-        grid-template-columns: 1fr;
-        grid-template-rows: 80px 80px 100px 100px 100px auto;
-        grid-template-areas: 
-        'cabecalho' /*definido na ordem crescente grows 80px*/
-        'navegacao' /*definido na ordem crescente grows 80px*/
-        'conteudo' /*definido na ordem crescente grows 200px*/
-        'conteudo1' /*definido na ordem crescente grows 200px*/
-        'conteudo2' /*definido na ordem crescente grows 200px*/
-        'rodape'; /*definido na ordem crescente grows auto*/
-    }
-
-    header { display: none; } /*quando entrar em modo resposivo mobile a tela cabeçalho não aparece ou seje omiti qualquer area*/
+button:hover {
+    background-color: #005f75;
 }
 
-input {
-    margin: 10px;
+img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
 }

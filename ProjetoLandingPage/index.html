@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Login</title>
+    <title>Ficha de RPG</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/tag.js"></script>
 </head>
-
 <body>
-    <main class="conteudo">
-        <div class="caixa1">
-            <label for="">Nome</label>
-            <input type="text" id="nome" name="nome" required><br>
-            <label for="">Crônica</label>
-            <input type="text" id="nome" name="nome" required><br>
-        </div>
-        <div class="caixa2">
-            <label for="">Nome</label>
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-            <input type="checkbox" name="">
-        </div>
-    </main>
-    <section class="conteudo1">
-        <label for="">Conceito</label>
-        <input type="text" id="nome" name="nome" required><br>
-        <label for="">Auspícios</label>
-        <input type="text" id="nome" name="nome" required><br>
-    </section>
-    <aside class="conteudo2">
-        <label for="">Conceito</label>
-        <input type="text" id="nome" name="nome" required><br>
-        <label for="">Auspícios</label>
-        <input type="text" id="nome" name="nome" required><br>
-    </aside>
-    <header class="cabecalho">CABEÇALHO</header>
-    <footer class="rodape">RODAPE</footer>
-    <nav class="navegacao">NAVEGAÇÃO</nav>
-</body>
 
+    <header>
+        <h1>Werewolf</h1>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <h2>Preencha sua Ficha</h2>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome">
+
+            <label for="forma">Forma:</label>
+            <select id="forma">
+                <option value="lobo">Lobo</option>
+                <option value="glabro">Glabro</option>
+                <option value="crinos">Crinos</option>
+            </select>
+
+            <h3>Atributos</h3>
+            <label>Força:</label> <input type="number" id="forca" min="1" max="10" value="1">
+            <label>Destreza:</label> <input type="number" id="destreza" min="1" max="10" value="1">
+            <label>Inteligência:</label> <input type="number" id="inteligencia" min="1" max="10" value="1">
+
+            <h3>Habilidades</h3>
+            <label><input type="checkbox" class="habilidade" value="Rastreamento"> Rastreamento</label>
+            <label><input type="checkbox" class="habilidade" value="Combate"> Combate</label>
+            <label><input type="checkbox" class="habilidade" value="Furtividade"> Furtividade</label>
+
+            <button onclick="atualizarFicha()">Atualizar</button>
+            <button onclick="resetarFicha()">Resetar</button>
+        </section>
+
+        <section class="ficha-exibicao">
+            <h2>Ficha do Personagem</h2>
+            <p><strong>Nome:</strong> <span id="exibir-nome">-</span></p>
+            <p><strong>Forma Atual:</strong> <span id="exibir-forma">-</span></p>
+            <p><strong>Força:</strong> <span id="exibir-forca">1</span></p>
+            <p><strong>Destreza:</strong> <span id="exibir-destreza">1</span></p>
+            <p><strong>Inteligência:</strong> <span id="exibir-inteligencia">1</span></p>
+            <p><strong>Habilidades:</strong> <span id="exibir-habilidades">Nenhuma</span></p>
+            <img id="imagem-forma" src="lobo.jpg" alt="Forma Atual">
+        </section>
+    </main>
+
+    <script src="assets/js/tag.js"></script>
+</body>
 </html>
