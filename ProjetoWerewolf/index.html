@@ -1,22 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox com Nome na Frente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .caixa2 {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .caixa2 label {
+            font-weight: bold;
+            margin-right: 10px; /* Espaço entre o nome e os checkboxes */
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 10px; /* Espaço entre os checkboxes */
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <header class="topo">Topo</header>
-    <nav class="menu">Menu</nav>
-    <main class="principal">Principal</main>
-    <aside class="primaria">Primaria</aside>
-    <aside class="secundaria">Secundaria</aside>
-    <footer class="rodape">Rodapé</footer>
-  </div>
-  </body>
 
+<div class="caixa2">
+    <label for="">Nome:</label>
+    <div class="checkbox-group">
+        <input type="checkbox" name="opcao1">
+        <input type="checkbox" name="opcao2">
+        <input type="checkbox" name="opcao3">
+        <input type="checkbox" name="opcao4">
+        <input type="checkbox" name="opcao5">
+        <input type="checkbox" name="opcao6">
+        <input type="checkbox" name="opcao7">
+        <input type="checkbox" name="opcao8">
+        <input type="checkbox" name="opcao9">
+        <input type="checkbox" name="opcao10">
+    </div>
+</div>
+
+</body>
 </html>

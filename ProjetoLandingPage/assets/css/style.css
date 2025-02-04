@@ -42,7 +42,7 @@ body {
     display: grid;
     min-height: 100vh; /*vai ocupa a altura inteira de tela*/
     /* grid-template-columns: 300px 1fr; duas colunas uma com 300px a o utra que vai ocupa o restante da tela */
-    grid-template-columns: 300px 1fr 1fr 1fr; /*teste para adicionar 3 colunas*/
+    grid-template-columns: 300px 450px 300px 300px; /*teste para adicionar 3 colunas*/
     grid-template-rows: 100px 1fr 100px;
     grid-template-areas: 
         'cabecalho cabecalho cabecalho cabecalho'
@@ -54,7 +54,7 @@ body {
 @media(max-width: 700px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 80px 200px 200px 200px auto;
+        grid-template-rows: 80px 80px 100px 100px 100px auto;
         grid-template-areas: 
         'cabecalho' /*definido na ordem crescente grows 80px*/
         'navegacao' /*definido na ordem crescente grows 80px*/
@@ -63,43 +63,10 @@ body {
         'conteudo2' /*definido na ordem crescente grows 200px*/
         'rodape'; /*definido na ordem crescente grows auto*/
     }
+
+    header { display: none; } /*quando entrar em modo resposivo mobile a tela cabeçalho não aparece ou seje omiti qualquer area*/
 }
 
-.container {
-    display: flex;
-    gap: 20px; /* Espaço entre os formulários */
-}
-.form-box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-.form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.form-group label {
-    width: 80px;
-    font-weight: bold;
-}
-.form-group input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-button {
-    width: 100%;
-    padding: 10px;
-    background: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background: darkblue;
+input {
+    margin: 10px;
 }
