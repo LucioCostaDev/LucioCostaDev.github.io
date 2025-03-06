@@ -4,54 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha de RPG</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2e;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            background-color: #27293d;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        section {
+            background-color: #32354a;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            color: #ffcc00;
+        }
+        input[type="number"] {
+            width: 50px;
+            text-align: center;
+            font-size: 16px;
+            background: #44475a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .coluna-atributos, .coluna {
+            display: inline-block;
+            margin: 10px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            animation: fadeIn 0.5s ease-in;
+        }
+    </style>
 </head>
 <body>
-
     <header>
-        <h1>Werewolf</h1>
+        <h1>Ficha de RPG</h1>
     </header>
-
+    
     <main>
-        <section class="formulario">
-            <h2>Preencha sua Ficha</h2>
-            
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome">
-
-            <label for="forma">Forma:</label>
-            <select id="forma">
-                <option value="lobo">Lobo</option>
-                <option value="glabro">Glabro</option>
-                <option value="crinos">Crinos</option>
-            </select>
-
-            <h3>Atributos</h3>
-            <label>Força:</label> <input type="number" id="forca" min="1" max="10" value="1">
-            <label>Destreza:</label> <input type="number" id="destreza" min="1" max="10" value="1">
-            <label>Inteligência:</label> <input type="number" id="inteligencia" min="1" max="10" value="1">
-
-            <h3>Habilidades</h3>
-            <label><input type="checkbox" class="habilidade" value="Rastreamento"> Rastreamento</label>
-            <label><input type="checkbox" class="habilidade" value="Combate"> Combate</label>
-            <label><input type="checkbox" class="habilidade" value="Furtividade"> Furtividade</label>
-
-            <button onclick="atualizarFicha()">Atualizar</button>
-            <button onclick="resetarFicha()">Resetar</button>
+        <section class="atributos">
+            <h2>Atributos</h2>
+            <div class="coluna-atributos">
+                <h3>Físico</h3>
+                <div class="atributo"><label>Força</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Destreza</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Energia</label> <input type="number" min="1" max="10" value="1"></div>
+            </div>
+            <div class="coluna-atributos">
+                <h3>Social</h3>
+                <div class="atributo"><label>Carisma</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Manipulação</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Compostura</label> <input type="number" min="1" max="10" value="1"></div>
+            </div>
+            <div class="coluna-atributos">
+                <h3>Mental</h3>
+                <div class="atributo"><label>Inteligência</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Raciocínio</label> <input type="number" min="1" max="10" value="1"></div>
+                <div class="atributo"><label>Resolver</label> <input type="number" min="1" max="10" value="1"></div>
+            </div>
         </section>
 
-        <section class="ficha-exibicao">
-            <h2>Ficha do Personagem</h2>
-            <p><strong>Nome:</strong> <span id="exibir-nome">-</span></p>
-            <p><strong>Forma Atual:</strong> <span id="exibir-forma">-</span></p>
-            <p><strong>Força:</strong> <span id="exibir-forca">1</span></p>
-            <p><strong>Destreza:</strong> <span id="exibir-destreza">1</span></p>
-            <p><strong>Inteligência:</strong> <span id="exibir-inteligencia">1</span></p>
-            <p><strong>Habilidades:</strong> <span id="exibir-habilidades">Nenhuma</span></p>
-            <img id="imagem-forma" src="lobo.jpg" alt="Forma Atual">
+        <section class="recursos">
+            <h2>Recursos Variáveis</h2>
+            <div class="recurso"><label>Saúde</label> <input type="number" min="0" max="20" value="10"></div>
+            <div class="recurso"><label>Força de Vontade</label> <input type="number" min="0" max="10" value="10"></div>
+            <div class="recurso"><label>Crinos</label> <input type="number" min="0" max="10" value="4"></div>
+        </section>
+
+        <section class="habilidades">
+            <h2>Habilidades</h2>
+            <div class="coluna">
+                <label>Atletismo</label> <input type="number" min="0" max="5" value="0">
+                <label>Briga</label> <input type="number" min="0" max="5" value="0">
+                <label>Arte</label> <input type="number" min="0" max="5" value="0">
+            </div>
+            <div class="coluna">
+                <label>Direção</label> <input type="number" min="0" max="5" value="0">
+                <label>Armas de Fogo</label> <input type="number" min="0" max="5" value="0">
+                <label>Furto</label> <input type="number" min="0" max="5" value="0">
+            </div>
+            <div class="coluna">
+                <label>Corpo a Corpo</label> <input type="number" min="0" max="5" value="0">
+                <label>Furtividade</label> <input type="number" min="0" max="5" value="0">
+                <label>Sobrevivência</label> <input type="number" min="0" max="5" value="0">
+            </div>
+        </section>
+
+        <section class="renome">
+            <h2>Renome</h2>
+            <div class="recurso"><label>Glória</label> <input type="number" min="0" max="5" value="5"></div>
+            <div class="recurso"><label>Honra</label> <input type="number" min="0" max="5" value="5"></div>
+            <div class="recurso"><label>Sabedoria</label> <input type="number" min="0" max="5" value="5"></div>
         </section>
     </main>
-
-    <script src="assets/js/tag.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
