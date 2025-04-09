@@ -1,53 +1,229 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkbox com Nome na Frente</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .caixa2 {
-            display: flex;
-            align-items: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .caixa2 label {
-            font-weight: bold;
-            margin-right: 10px; /* Espaço entre o nome e os checkboxes */
-        }
-        .checkbox-group {
-            display: flex;
-            gap: 10px; /* Espaço entre os checkboxes */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Werewolf 5ª Edição</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #2d2d2d;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      color: #ff8c42;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .attribute {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 10px;
+    }
+
+    .dots input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ff8c42;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dots input[type="radio"]:checked {
+      background-color: #ff8c42;
+    }
+
+    button {
+      background-color: #ff8c42;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #e67e22;
+    }
+
+    #resultadoRolagem {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Ficha de Werewolf 5ª Edição</h1>
+    <form id="fichaForm">
+      <div class="section">
+        <h2>Atributos</h2>
+        <div class="attribute">
+          <label>Força:</label>
+          <div class="dots">
+            <input type="radio" name="forca" value="1">
+            <input type="radio" name="forca" value="2">
+            <input type="radio" name="forca" value="3">
+            <input type="radio" name="forca" value="4">
+            <input type="radio" name="forca" value="5">
+          </div>
+        </div>
+        <div class="attribute">
+          <label>Destreza:</label>
+          <div class="dots">
+            <input type="radio" name="destreza" value="1">
+            <input type="radio" name="destreza" value="2">
+            <input type="radio" name="destreza" value="3">
+            <input type="radio" name="destreza" value="4">
+            <input type="radio" name="destreza" value="5">
+          </div>
+        </div>
+        <div class="attribute">
+          <label>Vigor:</label>
+          <div class="dots">
+            <input type="radio" name="vigor" value="1">
+            <input type="radio" name="vigor" value="2">
+            <input type="radio" name="vigor" value="3">
+            <input type="radio" name="vigor" value="4">
+            <input type="radio" name="vigor" value="5">
+          </div>
+        </div>
+      </div>
 
-<div class="caixa2">
-    <label for="">Nome:</label>
-    <div class="checkbox-group">
-        <input type="checkbox" name="opcao1">
-        <input type="checkbox" name="opcao2">
-        <input type="checkbox" name="opcao3">
-        <input type="checkbox" name="opcao4">
-        <input type="checkbox" name="opcao5">
-        <input type="checkbox" name="opcao6">
-        <input type="checkbox" name="opcao7">
-        <input type="checkbox" name="opcao8">
-        <input type="checkbox" name="opcao9">
-        <input type="checkbox" name="opcao10">
+      <div class="section">
+        <h2>Habilidades</h2>
+        <div class="attribute">
+          <label>Prontidão:</label>
+          <div class="dots">
+            <input type="radio" name="prontidao" value="0">
+            <input type="radio" name="prontidao" value="1">
+            <input type="radio" name="prontidao" value="2">
+            <input type="radio" name="prontidao" value="3">
+            <input type="radio" name="prontidao" value="4">
+            <input type="radio" name="prontidao" value="5">
+          </div>
+        </div>
+        <div class="attribute">
+          <label>Luta:</label>
+          <div class="dots">
+            <input type="radio" name="luta" value="0">
+            <input type="radio" name="luta" value="1">
+            <input type="radio" name="luta" value="2">
+            <input type="radio" name="luta" value="3">
+            <input type="radio" name="luta" value="4">
+            <input type="radio" name="luta" value="5">
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Raiva e Gnose</h2>
+        <div class="attribute">
+          <label>Raiva:</label>
+          <div class="dots">
+            <input type="radio" name="raiva" value="0">
+            <input type="radio" name="raiva" value="1">
+            <input type="radio" name="raiva" value="2">
+            <input type="radio" name="raiva" value="3">
+            <input type="radio" name="raiva" value="4">
+            <input type="radio" name="raiva" value="5">
+          </div>
+        </div>
+        <div class="attribute">
+          <label>Gnose:</label>
+          <div class="dots">
+            <input type="radio" name="gnose" value="0">
+            <input type="radio" name="gnose" value="1">
+            <input type="radio" name="gnose" value="2">
+            <input type="radio" name="gnose" value="3">
+            <input type="radio" name="gnose" value="4">
+            <input type="radio" name="gnose" value="5">
+          </div>
+        </div>
+      </div>
+
+      <button type="button" onclick="salvarFicha()">Salvar Ficha</button>
+      <button type="button" onclick="carregarFicha()">Carregar Ficha</button>
+    </form>
+
+    <div class="section">
+      <h2>Rolagem de Dados</h2>
+      <label for="dados">Quantidade de Dados:</label>
+      <input type="number" id="dados" name="dados" min="1" max="10" value="1">
+      <button type="button" onclick="rolarDados()">Rolar Dados</button>
+      <p id="resultadoRolagem"></p>
     </div>
-</div>
+  </div>
 
+  <script>
+    // Função para salvar a ficha no localStorage
+    function salvarFicha() {
+      const ficha = {
+        forca: document.querySelector('input[name="forca"]:checked')?.value || 0,
+        destreza: document.querySelector('input[name="destreza"]:checked')?.value || 0,
+        vigor: document.querySelector('input[name="vigor"]:checked')?.value || 0,
+        prontidao: document.querySelector('input[name="prontidao"]:checked')?.value || 0,
+        luta: document.querySelector('input[name="luta"]:checked')?.value || 0,
+        raiva: document.querySelector('input[name="raiva"]:checked')?.value || 0,
+        gnose: document.querySelector('input[name="gnose"]:checked')?.value || 0,
+      };
+      localStorage.setItem('fichaWerewolf', JSON.stringify(ficha));
+      alert('Ficha salva com sucesso!');
+    }
+
+    // Função para carregar a ficha do localStorage
+    function carregarFicha() {
+      const fichaSalva = localStorage.getItem('fichaWerewolf');
+      if (fichaSalva) {
+        const ficha = JSON.parse(fichaSalva);
+        for (const [key, value] of Object.entries(ficha)) {
+          const radio = document.querySelector(`input[name="${key}"][value="${value}"]`);
+          if (radio) radio.checked = true;
+        }
+        alert('Ficha carregada com sucesso!');
+      } else {
+        alert('Nenhuma ficha encontrada.');
+      }
+    }
+
+    // Função para rolar dados
+    function rolarDados() {
+      const quantidade = parseInt(document.getElementById('dados').value);
+      const resultados = [];
+      let sucessos = 0;
+
+      for (let i = 0; i < quantidade; i++) {
+        const resultado = Math.floor(Math.random() * 10) + 1;
+        resultados.push(resultado);
+        if (resultado >= 6) sucessos++; // Dificuldade padrão de 6
+      }
+
+      document.getElementById('resultadoRolagem').innerText = `Resultados: ${resultados.join(', ')} | Sucessos: ${sucessos}`;
+    }
+  </script>
 </body>
 </html>
