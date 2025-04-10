@@ -4,77 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha de Werewolf 5ª Edição</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #2d2d2d;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    h1, h2 {
-      color: #ff8c42;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .attribute {
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .dots {
-      display: flex;
-      gap: 10px;
-    }
-
-    .dots input[type="radio"] {
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #ff8c42;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .dots input[type="radio"]:checked {
-      background-color: #ff8c42;
-    }
-
-    button {
-      background-color: #ff8c42;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background-color: #e67e22;
-    }
-
-    #resultadoRolagem {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  link
 </head>
 <body>
   <div class="container">
@@ -178,52 +109,7 @@
       <p id="resultadoRolagem"></p>
     </div>
   </div>
-
-  <script>
-    // Função para salvar a ficha no localStorage
-    function salvarFicha() {
-      const ficha = {
-        forca: document.querySelector('input[name="forca"]:checked')?.value || 0,
-        destreza: document.querySelector('input[name="destreza"]:checked')?.value || 0,
-        vigor: document.querySelector('input[name="vigor"]:checked')?.value || 0,
-        prontidao: document.querySelector('input[name="prontidao"]:checked')?.value || 0,
-        luta: document.querySelector('input[name="luta"]:checked')?.value || 0,
-        raiva: document.querySelector('input[name="raiva"]:checked')?.value || 0,
-        gnose: document.querySelector('input[name="gnose"]:checked')?.value || 0,
-      };
-      localStorage.setItem('fichaWerewolf', JSON.stringify(ficha));
-      alert('Ficha salva com sucesso!');
-    }
-
-    // Função para carregar a ficha do localStorage
-    function carregarFicha() {
-      const fichaSalva = localStorage.getItem('fichaWerewolf');
-      if (fichaSalva) {
-        const ficha = JSON.parse(fichaSalva);
-        for (const [key, value] of Object.entries(ficha)) {
-          const radio = document.querySelector(`input[name="${key}"][value="${value}"]`);
-          if (radio) radio.checked = true;
-        }
-        alert('Ficha carregada com sucesso!');
-      } else {
-        alert('Nenhuma ficha encontrada.');
-      }
-    }
-
-    // Função para rolar dados
-    function rolarDados() {
-      const quantidade = parseInt(document.getElementById('dados').value);
-      const resultados = [];
-      let sucessos = 0;
-
-      for (let i = 0; i < quantidade; i++) {
-        const resultado = Math.floor(Math.random() * 10) + 1;
-        resultados.push(resultado);
-        if (resultado >= 6) sucessos++; // Dificuldade padrão de 6
-      }
-
-      document.getElementById('resultadoRolagem').innerText = `Resultados: ${resultados.join(', ')} | Sucessos: ${sucessos}`;
-    }
-  </script>
+  
+  <script src="script.js"></script>
 </body>
 </html>
