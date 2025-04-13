@@ -1,128 +1,756 @@
 <!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha de RPG</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2e;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-        }
-        header {
-            background-color: #27293d;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        section {
-            background-color: #32354a;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        h2 {
-            color: #ffcc00;
-        }
-        input[type="number"] {
-            width: 50px;
-            text-align: center;
-            font-size: 16px;
-            background: #44475a;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        .coluna-atributos, .coluna {
-            display: inline-block;
-            margin: 10px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        section {
-            animation: fadeIn 0.5s ease-in;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de Werewolf</title>
+  <style>
+    /* Estilos gerais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    
+    .character-sheet {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    
+    /* Cabeçalho */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #8b0000;
+      padding-bottom: 15px;
+    }
+    
+    .header-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header-item label {
+      font-weight: bold;
+      color: #8b0000;
+      margin-bottom: 5px;
+    }
+    
+    .header-item input {
+      border: none;
+      border-bottom: 1px solid #ddd;
+      padding: 5px;
+      font-size: 16px;
+    }
+    
+    /* Seções */
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .section-title {
+      color: #8b0000;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    
+    /* Atributos */
+    .attributes {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .attribute-group {
+      margin-bottom: 15px;
+    }
+    
+    .attribute-group-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    
+    .attribute {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .attribute-name {
+      min-width: 100px;
+    }
+    
+    .dots {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .dot {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #8b0000;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .dot.filled {
+      background-color: #8b0000;
+    }
+    
+    /* Perícias */
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .skill {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .skill-name {
+      min-width: 120px;
+    }
+    
+    .skill-input {
+      width: 50px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      margin-right: 10px;
+      text-align: right;
+    }
+    
+    /* Renome */
+    .renome {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    
+    .renome-item {
+      text-align: center;
+    }
+    
+    .renome-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    /* Gifts & Rites */
+    .gifts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    
+    .gifts-table th {
+      background-color: #8b0000;
+      color: white;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    .gifts-table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .gifts-table input {
+      width: 100%;
+      border: none;
+      padding: 5px;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Ficha de RPG</h1>
-    </header>
+  <div class="character-sheet">
+    <!-- Cabeçalho -->
+    <div class="header">
+      <div class="header-item">
+        <label>Name</label>
+        <input type="text">
+      </div>
+      <div class="header-item">
+        <label>Concept</label>
+        <input type="text">
+      </div>
+      <div class="header-item">
+        <label>Patron</label>
+        <input type="text">
+      </div>
+      <div class="header-item">
+        <label>Chronicle</label>
+        <input type="text">
+      </div>
+      <div class="header-item">
+        <label>Auspice</label>
+        <input type="text">
+      </div>
+      <div class="header-item">
+        <label>Tribe</label>
+        <input type="text">
+      </div>
+    </div>
     
-    <main>
-        <section class="atributos">
-            <h2>Atributos</h2>
-            <div class="coluna-atributos">
-                <h3>Físico</h3>
-                <div class="atributo"><label>Força</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Destreza</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Energia</label> <input type="number" min="1" max="10" value="1"></div>
+    <!-- Atributos -->
+    <div class="section">
+      <h2 class="section-title">ATTRIBUTES</h2>
+      <div class="attributes">
+        <!-- Físicos -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">PHYSICAL</div>
+          <div class="attribute">
+            <span class="attribute-name">Strength</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-            <div class="coluna-atributos">
-                <h3>Social</h3>
-                <div class="atributo"><label>Carisma</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Manipulação</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Compostura</label> <input type="number" min="1" max="10" value="1"></div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Dexterity</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-            <div class="coluna-atributos">
-                <h3>Mental</h3>
-                <div class="atributo"><label>Inteligência</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Raciocínio</label> <input type="number" min="1" max="10" value="1"></div>
-                <div class="atributo"><label>Resolver</label> <input type="number" min="1" max="10" value="1"></div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Stamina</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-        </section>
-
-        <section class="recursos">
-            <h2>Recursos Variáveis</h2>
-            <div class="recurso"><label>Saúde</label> <input type="number" min="0" max="20" value="10"></div>
-            <div class="recurso"><label>Força de Vontade</label> <input type="number" min="0" max="10" value="10"></div>
-            <div class="recurso"><label>Crinos</label> <input type="number" min="0" max="10" value="4"></div>
-        </section>
-
-        <section class="habilidades">
-            <h2>Habilidades</h2>
-            <div class="coluna">
-                <label>Atletismo</label> <input type="number" min="0" max="5" value="0">
-                <label>Briga</label> <input type="number" min="0" max="5" value="0">
-                <label>Arte</label> <input type="number" min="0" max="5" value="0">
+          </div>
+        </div>
+        
+        <!-- Sociais -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">SOCIAL</div>
+          <div class="attribute">
+            <span class="attribute-name">Charisma</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-            <div class="coluna">
-                <label>Direção</label> <input type="number" min="0" max="5" value="0">
-                <label>Armas de Fogo</label> <input type="number" min="0" max="5" value="0">
-                <label>Furto</label> <input type="number" min="0" max="5" value="0">
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Manipulation</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-            <div class="coluna">
-                <label>Corpo a Corpo</label> <input type="number" min="0" max="5" value="0">
-                <label>Furtividade</label> <input type="number" min="0" max="5" value="0">
-                <label>Sobrevivência</label> <input type="number" min="0" max="5" value="0">
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Composure</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
             </div>
-        </section>
-
-        <section class="renome">
-            <h2>Renome</h2>
-            <div class="recurso"><label>Glória</label> <input type="number" min="0" max="5" value="5"></div>
-            <div class="recurso"><label>Honra</label> <input type="number" min="0" max="5" value="5"></div>
-            <div class="recurso"><label>Sabedoria</label> <input type="number" min="0" max="5" value="5"></div>
-        </section>
-    </main>
+          </div>
+        </div>
+        
+        <!-- Mentais -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">MENTAL</div>
+          <div class="attribute">
+            <span class="attribute-name">Intelligence</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Wits</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Resolve</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Health e Drivers -->
+      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <div style="font-weight: bold;">Health</div>
+        <div style="font-weight: bold;">Drivers</div>
+      </div>
+    </div>
     
-    <script src="script.js"></script>
+    <!-- Perícias -->
+    <div class="section">
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills">
+        <!-- Coluna 1 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Athletics</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Brawl</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Craft</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Driving</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Firearms</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Larceny</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Melee</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Stealth</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Survival</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 2 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Animal Ken</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Etiquette</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Insight</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Intimidation</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Leadership</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Performance</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Persuasion</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Streetwise</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Subterfuge</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 3 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Academic</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Awareness</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Finance</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Investigation</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Medicine</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Occult</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Politics</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Science</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Technology</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Renome -->
+    <div class="section">
+      <h2 class="section-title">RENOWN</h2>
+      <div class="renome">
+        <div class="renome-item">
+          <div class="renome-title">Glory</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="renome-item">
+          <div class="renome-title">Honor</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="renome-item">
+          <div class="renome-title">Wisdom</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Gifts & Rites -->
+    <div class="section">
+      <h2 class="section-title">GIFTS & RITES</h2>
+      <table class="gifts-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Pool</th>
+            <th>Cost</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      Page 5 5 5 5 5
+    </div>
+  </div>
+
+  <script>
+    // Adiciona funcionalidade aos dots (opcional)
+    document.querySelectorAll('.dot').forEach(dot => {
+      dot.addEventListener('click', function() {
+        this.classList.toggle('filled');
+      });
+    });
+  </script>
 </body>
 </html>
