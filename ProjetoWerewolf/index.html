@@ -1,501 +1,611 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
-<link>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ficha de Werewolf 5ª Edição</title>
-  <link rel="stylesheet" href="style.css"></link>
-  <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
+  <title>Ficha de Lobisomem</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header class="topo"><h1>Ficha de Werewolf 5ª Edição</h1></header>
-    <form id="fichaForm">
-      <div class="section_1">
-        <h2>ATRIBUTOS</h2>
-        <div class="atributos">
-          <label>Força:</label>
-          <div class="fisicos">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Destreza:</label>
-          <div class="fisicos">
-            <input type="radio" name="destreza" value="1">
-            <input type="radio" name="destreza" value="2">
-            <input type="radio" name="destreza" value="3">
-            <input type="radio" name="destreza" value="4">
-            <input type="radio" name="destreza" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Vigor:</label>
-          <div class="fisicos">
-            <input type="radio" name="vigor" value="1">
-            <input type="radio" name="vigor" value="2">
-            <input type="radio" name="vigor" value="3">
-            <input type="radio" name="vigor" value="4">
-            <input type="radio" name="vigor" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Carisma:</label>
-          <div class="sociais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Manipulação:</label>
-          <div class="sociais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Autocontrole:</label>
-          <div class="sociais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>inteligência:</label>
-          <div class="mentais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Raciocinio:</label>
-          <div class="mentais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Determinção:</label>
-          <div class="mentais">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Vida:</label>
-          <div class="atributo_ex">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-            <input type="radio" name="forca" value="6">
-            <input type="radio" name="forca" value="7">
-            <input type="radio" name="forca" value="8">
-            <input type="radio" name="forca" value="9">
-            <input type="radio" name="forca" value="10">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Gnose:</label>
-          <div class="atributo_ex">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-            <input type="radio" name="forca" value="5">
-            <input type="radio" name="forca" value="6">
-            <input type="radio" name="forca" value="7">
-            <input type="radio" name="forca" value="8">
-            <input type="radio" name="forca" value="9">
-            <input type="radio" name="forca" value="10">
-          </div>
-        </div>
-        <div class="atributos">
-          <label>Crinos:</label>
-          <div class="atributo_ex">
-            <input type="radio" name="forca" value="1">
-            <input type="radio" name="forca" value="2">
-            <input type="radio" name="forca" value="3">
-            <input type="radio" name="forca" value="4">
-          </div>
-        </div>
-      </div>
+  <div class="character-sheet pulse">
+    <!-- Título e logo -->
+    <div class="title-container">
+      <img src="https://i.imgur.com/JzYJjZl.png" alt="Logo Lobisomem" class="logo">
+      <h1 class="title glow">LOBISOMEM</h1>
+      <img src="https://i.imgur.com/JzYJjZl.png" alt="Logo Lobisomem" class="logo">
+    </div>
     
-      <div class="section_2">
-        <h2>PERÍCIAS</h2>
-        <div class="pericias">
-          <label>Atletismo:</label>
-          <div class="pericias_1">
-            <input type="radio" name="prontidao" value="0">
-            <input type="radio" name="prontidao" value="1">
-            <input type="radio" name="prontidao" value="2">
-            <input type="radio" name="prontidao" value="3">
-            <input type="radio" name="prontidao" value="4">
-            <input type="radio" name="prontidao" value="5">
-          </div>
-        </div>
-        <div class="pericias">
-          <label>Briga:</label>
-          <div class="pericias_1">
-            <input type="radio" name="luta" value="0">
-            <input type="radio" name="luta" value="1">
-            <input type="radio" name="luta" value="2">
-            <input type="radio" name="luta" value="3">
-            <input type="radio" name="luta" value="4">
-            <input type="radio" name="luta" value="5">
-          </div>
-        </div>
+    <!-- Cabeçalho -->
+    <div class="header">
+      <div class="header-item">
+        <label>Nome</label>
+        <input type="text" placeholder="Nome do personagem">
       </div>
-      <div class="pericias">
-        <label>Oficios:</label>
-        <div class="pericias_1">
-          <input type="radio" name="prontidao" value="0">
-          <input type="radio" name="prontidao" value="1">
-          <input type="radio" name="prontidao" value="2">
-          <input type="radio" name="prontidao" value="3">
-          <input type="radio" name="prontidao" value="4">
-          <input type="radio" name="prontidao" value="5">
-        </div>
+      <div class="header-item">
+        <label>Conceito</label>
+        <input type="text" placeholder="Conceito do personagem">
       </div>
-      <div class="pericias">
-        <label>Condução:</label>
-        <div class="pericias_1">
-          <input type="radio" name="luta" value="0">
-          <input type="radio" name="luta" value="1">
-          <input type="radio" name="luta" value="2">
-          <input type="radio" name="luta" value="3">
-          <input type="radio" name="luta" value="4">
-          <input type="radio" name="luta" value="5">
-        </div>
+      <div class="header-item">
+        <label>Patrono</label>
+        <input type="text" placeholder="Patrono">
       </div>
+      <div class="header-item">
+        <label>Crônica</label>
+        <input type="text" placeholder="Crônica">
+      </div>
+      <div class="header-item">
+        <label>Auspicio</label>
+        <select id="auspice-select">
+          <option value="">Selecione</option>
+          <option value="Rahu">Rahu (Guerreiro)</option>
+          <option value="Cahalith">Cahalith (Visionário)</option>
+          <option value="Elodoth">Elodoth (Juiz)</option>
+          <option value="Ithaeur">Ithaeur (Xamã)</option>
+          <option value="Irraka">Irraka (Caçador)</option>
+        </select>
+        <img id="auspice-image" class="auspice-tribe-image" src="" alt="Auspice">
+      </div>
+      <div class="header-item">
+        <label>Tribo</label>
+        <select id="tribe-select">
+          <option value="">Selecione</option>
+          <option value="Blood Talons">Blood Talons</option>
+          <option value="Bone Shadows">Bone Shadows</option>
+          <option value="Hunter in Darkness">Hunter in Darkness</option>
+          <option value="Iron Masters">Iron Masters</option>
+          <option value="Storm Lords">Storm Lords</option>
+        </select>
+        <img id="tribe-image" class="auspice-tribe-image" src="" alt="Tribe">
+      </div>
+    </div>
     
-    <div class="pericias">
-      <label>Armas de fogo:</label>
-      <div class="pericias_1">
-        <input type="radio" name="prontidao" value="0">
-        <input type="radio" name="prontidao" value="1">
-        <input type="radio" name="prontidao" value="2">
-        <input type="radio" name="prontidao" value="3">
-        <input type="radio" name="prontidao" value="4">
-        <input type="radio" name="prontidao" value="5">
-      </div>
-    </div>
-    <div class="pericias">
-      <label>Furto:</label>
-      <div class="pericias_1">
-        <input type="radio" name="luta" value="0">
-        <input type="radio" name="luta" value="1">
-        <input type="radio" name="luta" value="2">
-        <input type="radio" name="luta" value="3">
-        <input type="radio" name="luta" value="4">
-        <input type="radio" name="luta" value="5">
-      </div>
-      </div>
-  <div class="pericias">
-    <label>Arma Branca:</label>
-    <div class="pericias_1">
-      <input type="radio" name="prontidao" value="0">
-      <input type="radio" name="prontidao" value="1">
-      <input type="radio" name="prontidao" value="2">
-      <input type="radio" name="prontidao" value="3">
-      <input type="radio" name="prontidao" value="4">
-      <input type="radio" name="prontidao" value="5">
-    </div>
-  </div>
-  <div class="pericias">
-    <label>Furtividade:</label>
-    <div class="pericias_1">
-      <input type="radio" name="luta" value="0">
-      <input type="radio" name="luta" value="1">
-      <input type="radio" name="luta" value="2">
-      <input type="radio" name="luta" value="3">
-      <input type="radio" name="luta" value="4">
-      <input type="radio" name="luta" value="5">
-    </div>
-  </div>
-<div class="pericias">
-  <label>Sobrevivência:</label>
-  <div class="pericias_1">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Empatia c/ Animais:</label>
-  <div class="pericias_2">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Etiquetas:</label>
-  <div class="pericias_2">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Intuição:</label>
-  <div class="pericias_2">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Intimidação:</label>
-  <div class="pericias_2">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Liderança:</label>
-  <div class="pericias_2">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Performace:</label>
-  <div class="pericias_2">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Persuasão:</label>
-  <div class="pericias_2">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Manha:</label>
-  <div class="pericias_2">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Astúcia:</label>
-  <div class="pericias_2">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Erudição:</label>
-  <div class="pericias_3">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Prontidão:</label>
-  <div class="pericias_3">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Finanças:</label>
-  <div class="pericias_3">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Investigação:</label>
-  <div class="pericias_3">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Medicina:</label>
-  <div class="pericias_3">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Ocultismo:</label>
-  <div class="pericias_3">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-
-<div class="pericias">
-  <label>Politica:</label>
-  <div class="pericias_3">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-<div class="pericias">
-  <label>Ciência:</label>
-  <div class="pericias_3">
-    <input type="radio" name="luta" value="0">
-    <input type="radio" name="luta" value="1">
-    <input type="radio" name="luta" value="2">
-    <input type="radio" name="luta" value="3">
-    <input type="radio" name="luta" value="4">
-    <input type="radio" name="luta" value="5">
-  </div>
-</div>
-
-<div class="pericias">
-  <label>Tecnologia:</label>
-  <div class="pericias_3">
-    <input type="radio" name="prontidao" value="0">
-    <input type="radio" name="prontidao" value="1">
-    <input type="radio" name="prontidao" value="2">
-    <input type="radio" name="prontidao" value="3">
-    <input type="radio" name="prontidao" value="4">
-    <input type="radio" name="prontidao" value="5">
-  </div>
-</div>
-      <div class="renome">
-        <h2>RENOME</h2>
-        <div class="renome_1">
-          <label>Glória:</label>
-          <div class="dots">
-            <input type="radio" name="raiva" value="0">
-            <input type="radio" name="raiva" value="1">
-            <input type="radio" name="raiva" value="2">
-            <input type="radio" name="raiva" value="3">
-            <input type="radio" name="raiva" value="4">
-            <input type="radio" name="raiva" value="5">
+     <!-- Atributos -->
+     <div class="section">
+      <h2 class="section-title">ATTRIBUTES</h2>
+      <div class="attributes">
+        <!-- Físicos -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">FISICOS</div>
+          <div class="attribute">
+            <span class="attribute-name">Força</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Destreza</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Vigor</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
           </div>
         </div>
-        <div class="renome">
-          <label>Honra:</label>
-          <div class="renome_2">
-            <input type="radio" name="gnose" value="0">
-            <input type="radio" name="gnose" value="1">
-            <input type="radio" name="gnose" value="2">
-            <input type="radio" name="gnose" value="3">
-            <input type="radio" name="gnose" value="4">
-            <input type="radio" name="gnose" value="5">
+        
+        <!-- Sociais -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">SOCIAIS</div>
+          <div class="attribute">
+            <span class="attribute-name">Carisma</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Manipulação</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Autocontrole</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
           </div>
         </div>
-        <div class="renome">
-          <label>Sabedoria:</label>
-          <div class="renome_33">
-            <input type="radio" name="gnose" value="0">
-            <input type="radio" name="gnose" value="1">
-            <input type="radio" name="gnose" value="2">
-            <input type="radio" name="gnose" value="3">
-            <input type="radio" name="gnose" value="4">
-            <input type="radio" name="gnose" value="5">
+        
+        <!-- Mentais -->
+        <div class="attribute-group">
+          <div class="attribute-group-title">MENTAIS</div>
+          <div class="attribute">
+            <span class="attribute-name">Inteligência</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Raciocínio</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="attribute">
+            <span class="attribute-name">Determinação</span>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
           </div>
         </div>
       </div>
-
-      <button type="button" onclick="salvarFicha()">Salvar Ficha</button>
-      <button type="button" onclick="carregarFicha()">Carregar Ficha</button>
-    </form>
-
+      
+      <!-- Health e Drivers -->
+      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <div style="font-weight: bold;">Vida</div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div style="font-weight: bold;">Gnose</div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div style="font-weight: bold;">Crinos</div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    
+    <!-- Perícias -->
     <div class="section">
-      <h2>Rolagem de Dados</h2>
-      <label for="dados">Quantidade de Dados:</label>
-      <input type="number" id="dados" name="dados" min="1" max="10" value="1">
-      <button type="button" onclick="rolarDados()">Rolar Dados</button>
-      <p id="resultadoRolagem"></p>
+      <h2 class="section-title">HABILIDADES</h2>
+      <div class="skills">
+        <!-- Coluna 1 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Armas Branca</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Armas de fogo</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Atletismo</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Briga</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Condução</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Furitividade</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Ladroagem</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Oficios</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Sobrevivência</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 2 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Empatia c/ Animais</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Etiqueta</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Intimidação</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Liderança</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Manha</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Performance</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Persuasão</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Sagacidade</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Subterfúgio</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Coluna 3 -->
+        <div>
+          <div class="skill">
+            <span class="skill-name">Ciência</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Erudição</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Finanças</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Investigação</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Medicina</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Ocultismo</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Percepção</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Politica</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Tecnologia</span>
+            <input type="text" class="skill-input">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Renome -->
+    <div class="section">
+      <h2 class="section-title">RENOME</h2>
+      <div class="renome">
+        <div class="renome-item">
+          <div class="renome-title">Gloria</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="renome-item">
+          <div class="renome-title">Honra</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="renome-item">
+          <div class="renome-title">Sabedoria</div>
+          <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Gifts & Rites -->
+    <div class="section">
+      <h2 class="section-title">DONS & RITUAIS</h2>
+      <table class="gifts-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Dados</th>
+            <th>Custo</th>
+            <th>Notas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+          <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      Werewolf
     </div>
   </div>
-  <script src="script.js"></script>
-</body>
-</html>
+

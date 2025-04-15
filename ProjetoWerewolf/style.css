@@ -1,4 +1,4 @@
-/* Reset e estilos básicos */
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +7,323 @@
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #111;
+  color: #ddd;
   line-height: 1.6;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, [col] 1fr 5%);
-  grid-template-rows: [linha] 100px 4vh [linha] 100px [linha];
+  background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
+.character-sheet {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(20, 20, 20, 0.9);
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+  border-radius: 10px;
+  border: 2px solid #8b0000;
+}
 
+/* Título e logo */
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  color: #8b0000;
+  text-shadow: 2px 2px 4px #000;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 20px;
+}
+
+.logo {
+  height: 60px;
+  filter: drop-shadow(0 0 5px #8b0000);
+}
+
+/* Cabeçalho */
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 15px;
+}
+
+.header-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-item label {
+  font-weight: bold;
+  color: #8b0000;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.header-item input, .header-item select {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #ddd;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+/* Seções */
+.section {
+  margin-bottom: 25px;
+  background-color: rgba(30, 30, 30, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #8b0000;
+}
+
+.section-title {
+  color: #8b0000;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px #000;
+  letter-spacing: 1px;
+}
+
+/* Atributos */
+.attributes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.attribute-group {
+  margin-bottom: 15px;
+}
+
+.attribute-group-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #8b0000;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.attribute {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.attribute-name {
+  min-width: 100px;
+  color: #ddd;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #8b0000;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #222;
+  transition: all 0.3s;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px #8b0000;
+}
+
+.dot.filled {
+  background-color: #8b0000;
+  box-shadow: 0 0 5px #8b0000;
+}
+
+/* Perícias */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  min-width: 120px;
+  color: #ddd;
+}
+
+.skill-input {
+  width: 50px;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #ddd;
+  margin-right: 10px;
+  text-align: right;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+/* Renome */
+.renome {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.renome-item {
+  text-align: center;
+  background-color: rgba(139, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #8b0000;
+  min-width: 120px;
+}
+
+.renome-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #8b0000;
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* Gifts & Rites */
+.gifts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.gifts-table th {
+  background-color: #8b0000;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.gifts-table td {
+  padding: 8px;
+  border-bottom: 1px solid #444;
+}
+
+.gifts-table input {
+  width: 100%;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #ddd;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #777;
+}
+
+/* Rolagem de dados */
+.dice-roller {
+  background-color: rgba(30, 30, 30, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border-left: 4px solid #8b0000;
+}
+
+.dice-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dice-controls input {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #ddd;
+  padding: 8px;
+  width: 60px;
+  border-radius: 4px;
+}
+
+.dice-controls button {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dice-controls button:hover {
+  background-color: #6b0000;
+}
+
+.dice-result {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(139, 0, 0, 0.2);
+  border-radius: 4px;
+  min-height: 20px;
+}
+
+/* Auspice e Tribe com imagens */
+.auspice-tribe-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.auspice-tribe-selector {
+  flex: 1;
+}
+
+.auspice-tribe-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #8b0000;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Efeitos especiais */
+.glow {
+  text-shadow: 0 0 10px #8b0000;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(139, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 0, 0, 0); }
+}
