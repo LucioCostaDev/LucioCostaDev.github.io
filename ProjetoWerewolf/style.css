@@ -7,14 +7,14 @@
 }
 
 body {
-  background-color: #111;
+  background-color: #189e2a;
   color: #ddd;
   line-height: 1.6;
   padding: 20px;
-  background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
-  background-size: cover;
+  background-image:url(imagens/fundo/https___pin_it_5d8rQrL5K.jpg);
+  background-size: auto;
   background-attachment: fixed;
-  background-position: center;
+  background-position: auto;
 }
 
 .character-sheet {
@@ -62,8 +62,13 @@ body {
 }
 
 .header-item {
-  display: flex;
-  flex-direction: column;
+  display: relative;
+  margin-bottom: 15px;
+}
+
+/* Ajuste para os selects */
+.header-item select {
+  width: 100%;
 }
 
 .header-item label {
@@ -245,51 +250,115 @@ body {
   color: #777;
 }
 
-/* Rolagem de dados */
+/* Rolagem de dados visual */
 .dice-roller {
   background-color: rgba(30, 30, 30, 0.7);
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
   border-left: 4px solid #8b0000;
 }
 
 .dice-controls {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   gap: 10px;
-  margin-top: 10px;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.dice-controls input {
+.dice-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#dice-count {
+  width: 60px;
   background-color: #222;
   border: 1px solid #444;
   color: #ddd;
   padding: 8px;
-  width: 60px;
   border-radius: 4px;
 }
 
-.dice-controls button {
+#difficulty {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #ddd;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+#roll-dice {
   background-color: #8b0000;
   color: white;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  grid-column: 1 / -1;
 }
 
-.dice-controls button:hover {
+#roll-dice:hover {
   background-color: #6b0000;
+  transform: scale(1.05);
 }
 
-.dice-result {
-  margin-top: 10px;
+#dice-visual-result {
+  min-height: 120px;
+  margin-top: 15px;
+}
+
+#dice-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+}
+
+.dice-face {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: all 0.5s;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+.dice-face.success {
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+  transform: scale(1.1);
+}
+
+.dice-face.failure {
+  opacity: 0.7;
+  filter: grayscale(70%);
+}
+
+.dice-face.critical {
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 15px #ff0000;
+  animation: pulseCritical 0.5s infinite alternate;
+}
+
+@keyframes pulseCritical {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+#dice-summary {
+  margin-top: 15px;
   padding: 10px;
   background-color: rgba(139, 0, 0, 0.2);
-  border-radius: 4px;
-  min-height: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Auspice e Tribe com imagens */
@@ -304,13 +373,18 @@ body {
 }
 
 .auspice-tribe-image {
+  position: absolute;
   width: 100px;
   height: 100px;
-  object-fit: cover;
-  border-radius: 5px;
-  border: 2px solid #8b0000;
-  margin-top: 10px;
+  right: 0;
+  top: 100%;
+  margin-top: 5px;
+  object-fit: contain;
   display: none;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
 }
 
 /* Efeitos especiais */
