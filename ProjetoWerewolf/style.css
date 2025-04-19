@@ -387,6 +387,47 @@ body {
   z-index: 10;
 }
 
+/*Auspicio e tribbo topo*/
+/* Imagens flutuantes no topo */
+.floating-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 100;
+  pointer-events: none; /* Permite clicar nos elementos abaixo */
+}
+
+.floating-image {
+  position: absolute;
+  max-height: 120px;
+  max-width: 200px;
+  object-fit: contain;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+  background-color: rgba(97, 92, 92, 0.7);
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.floating-image.left {
+  left: 20px;
+  top: 20px;
+}
+
+.floating-image.right {
+  right: 20px;
+  top: 20px;
+}
+
+/* Ajuste para o título não ficar escondido */
+.title-container {
+  margin-top: 80px; /* Espaço para as imagens flutuantes */
+}
+
+/* Mantenha o restante do seu CSS original */
+
 /* Efeitos especiais */
 .glow {
   text-shadow: 0 0 10px #8b0000;

@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Imagens flutuantes do Auspício e Tribo -->
+  <div class="floating-images">
+    <img id="auspice-floating-image" class="floating-image left" src="" alt="Auspice">
+    <img id="tribe-floating-image" class="floating-image right" src="" alt="Tribe">
+  </div>
+
   <div class="character-sheet pulse">
     <!-- Título e logo -->
     <div class="title-container">
@@ -15,7 +21,7 @@
       <img src="imagens/Dice - Werewolf The Apocalypse/Dice_Regular_Success.png" alt="Logo Lobisomem" class="logo">
     </div>
     
-    <!-- Cabeçalho -->
+    <!-- Cabeçalho (mantido como estava) -->
     <div class="header">
       <div class="header-item">
         <label>Nome</label>
@@ -37,13 +43,12 @@
         <label>Auspicio</label>
         <select id="auspice-select">
           <option value="">Selecione</option>
-          <option value="Ragabash">Ragabash</option>
-          <option value="Theuge">Theuge</option>
-          <option value="Philodox">Philodox</option>
-          <option value="Galliard">Galliard</option>
-          <option value="Ahroun">Ahroun</option>
+          <option value="ragabash">Ragabash</option>
+          <option value="theurge">Theurge</option>
+          <option value="philodox">Philodox</option>
+          <option value="galliard">Galliard</option>
+          <option value="ahroun">Ahroun</option>
         </select>
-        <img id="auspice-image" class="auspice-tribe-image" src="" alt="Auspice">
       </div>
       <div class="header-item">
         <label>Tribo</label>
@@ -61,7 +66,6 @@
           <option value="Silent Striders">Silent Striders</option>
           <option value="Silver Fangs">Silver Fangs</option>
         </select>
-        <img id="tribe-image" class="auspice-tribe-image" src="" alt="Tribe">
       </div>
     </div>
     
@@ -613,31 +617,54 @@
       Werewolf
     </div>
   </div>
-<!-- Rolar dados -->
+
+<!-- Rolar dados - Versão melhorada -->
 <div class="dice-roller">
   <h2 class="section-title">ROLAGEM DE DADOS</h2>
   <div class="dice-controls">
-    <label>Quantidade de dados:</label>
-    <input type="number" id="dice-count" min="1" max="10" value="1">
-    <button id="roll-dice">Rolar Dados</button>
-    <div class="dice-options">
-      <label>Dificuldade:</label>
+    <div class="dice-input-group">
+      <label for="dice-count">Quantidade:</label>
+      <input type="number" id="dice-count" min="1" max="20" value="5">
+    </div>
+    <div class="dice-input-group">
+      <label for="difficulty">Dificuldade:</label>
       <select id="difficulty">
-        <option value="8">Normal (8+)</option>
+        <option value="6">Muito Fácil (6+)</option>
         <option value="7">Fácil (7+)</option>
+        <option value="8" selected>Normal (8+)</option>
         <option value="9">Difícil (9+)</option>
         <option value="10">Muito Difícil (10)</option>
       </select>
     </div>
+    <button id="roll-dice" class="dice-button">Rolar Dados</button>
   </div>
+  
   <div id="dice-visual-result">
-    <div id="dice-images-container"></div>
-    <div id="dice-summary"></div>
+    <div id="dice-images-container" class="dice-grid"></div>
+    <div id="dice-summary" class="dice-results">
+      <div class="result-item">
+        <span class="result-label">Total de dados:</span>
+        <span id="total-dice" class="result-value">0</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Sucessos:</span>
+        <span id="success-count" class="result-value success-text">0</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Críticos:</span>
+        <span id="critical-count" class="result-value critical-text">0</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Falhas:</span>
+        <span id="failure-count" class="result-value failure-text">0</span>
+      </div>
+    </div>
   </div>
 </div>
-  <script src="script.js"></script>
-  </body>
-  </html>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
 
 
 
