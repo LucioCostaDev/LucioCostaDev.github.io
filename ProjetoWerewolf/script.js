@@ -74,7 +74,7 @@ const auspiceImages = {
     for (let i = 0; i < count; i++) {
       const dice = document.createElement('img');
       dice.className = 'dice-face rolling';
-      dice.src = 'imagens/dados/rolling.gif';
+      dice.src = 'imagens/Dice - Werewolf The Apocalypse/exclamation.png';
       container.appendChild(dice);
     }
     
