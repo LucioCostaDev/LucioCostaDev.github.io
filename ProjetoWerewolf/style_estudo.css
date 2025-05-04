@@ -1,0 +1,5 @@
+/* Iniciando CSS */
+/* por padrão se reseta a pagina que por padrão tem umas configurações */
+* {
+    margin: 0;
+}
