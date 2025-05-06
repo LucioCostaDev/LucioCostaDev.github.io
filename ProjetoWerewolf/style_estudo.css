@@ -1,5 +1,63 @@
+/* charset UTF-8 e uma tag que defini o conjunto de caracteres a ser utilizado na web ou seja e capaz de codificar a maioria dos caracteres especiais utilizados em diferentes idiomas*/
+@charset "UTF-8";
+
+/* exportação de fontes seja ela interna ou externa */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Tagesschrift&display=swap');
+
+.dancing-script-regular {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.tagesschrift-unique {
+    font-family: "Tagesschrift", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.caveat-unique {
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+/* criação de uma paleta de cores utilizando VARIAVEL */
+:root {
+    --cor0: #000000;
+    --cor1: #EEEEEE;
+    --cor2: #1EFF05;
+    --cor3: #5B1F00;
+
+    --fonte-padrao:'Tagesschrift', system-ui;
+    --fonte-secundaria: 'Dancing Script', cursive;
+    --fonte-terciaria: 'Caveat', cursive;
+}
+
 /* Iniciando CSS */
 /* por padrão se reseta a pagina que por padrão tem umas configurações */
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+/* estilização do corpo da pagina */
+body {
+    background-color: var(--cor0);
+    color: var(--cor1);
+    font-family: var(--fonte-padrao);
+}
+
+/* div criado para verificar as divs */
+div {
+    border: 2px dashed var(--cor1) !important;
+    padding: 8px;
+    margin: 4px;
 }
