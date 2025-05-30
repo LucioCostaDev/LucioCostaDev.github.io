@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOBISOMEM</title>
     <link rel="stylesheet" href="style_estudo.css">
 </head>
+
 <body>
     <!-- Imagens flutuantes do Auspicios e Tribos -->
     <div class="imagens-flutuante">
@@ -14,173 +16,183 @@
     </div>
 
     <!-- Inicio ficha -->
-<div class="ficha-personagem pulse">
+    <div class="ficha-personagem pulse">
 
-    <!-- Título e Logo -->
-     <!-- um container para a parte do titulo duas imagens e letras normal -->
-<div class="titulo-container">
-    <img src="imagens/Dice - Werewolf The Apocalypse/Dice_Rage_Brutal.png" alt="">
-<h1 class="brilho no titulo">Lobisomem</h1>
-    <img src="imagens/Dice - Werewolf The Apocalypse/Dice_Regular_Success.png" alt="">
-</div>
-
-    <!-- cabecalho -->
-<div class="cabecalho"> <!-- div principal de cabeçalhos que vão fica dentro-->
-<div class="cabecalho-itens"> <!--Bloco que vai conter item -->
-    <label>Nome</label> <!--Criação de um rotulo para indentificar campo -->
-    <input type="text" placeholder="Nome do personagem"> <!--Cria um campo para colocar uma informação em texto -->
-</div>
-
-<div class="cabecalho-itens">
-    <label>Conceito</label>
-    <input type="text" placeholder="Frase que o defina" >
-</div>
-
-<div class="cabecalho-itens">
-    <label>Patrono</label>
-    <input type="text" placeholder="Espirito principal">
-</div>
-
-<div class="cabecalho-itens">
-    <label>Crônica</label>
-    <input type="text" placeholder="Nome da Crônica">
-</div>
-
-<div class="cabecalho-itens">
-    <label>Auspicio</label> <!--Rotulo para seleção de auspicio -->
-    <select id="selecao-auspicios">
-        <option value="">Selecione</option> <!--add valor para seleção e nome -->
-        <option value="ragabash">Ragabash</option>
-        <option value="theurge">Theurge</option>
-        <option value="philodox">Philodox</option>
-        <option value="galliard">Galliard</option>
-        <option value="ahroun">Ahroun</option>
-        </select>
-</div>
-
-<div class="cabecalho-itens">
-        <label>Tribo</label>
-        <select id="selecao-tribo">
-          <option value="">Selecione</option>
-          <option value="Black Furies">Black Furies</option>
-          <option value="Bone Gnawers">Bone Gnawers</option>
-          <option value="Children Gai">Children Gaia</option>
-          <option value="Galestalkers">Galestalkers</option>
-          <option value="Ghost Council">Ghost Council</option>
-          <option value="Glass Walker">Glass Walkers</option>
-          <option value="Hart Wardens">Hart Wardens</option>
-          <option value="Red Talon">Red Talon</option>
-          <option value="Shadow Lords">Shadow Lords</option>
-          <option value="Silent Striders">Silent Striders</option>
-          <option value="Silver Fangs">Silver Fangs</option>
-        </select>
-      </div>
-
-      <!-- Atributos -->
-<div class="selecao">
-    <h2 class="selecao-titulo">ATRIBUTOS</h2>
-<div class="atributos">
-    <!-- Fisicos -->
-     <div class="grupo-de-atributo">
-        <div class="titulo-do-grupo-de-atributo">FISICOS</div>
-        <div class="atributo">
-            <span class="nome-atributo">Força</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
+        <!-- Título e Logo -->
+        <!-- um container para a parte do titulo duas imagens e letras normal -->
+        <div class="titulo-container">
+            <img src="imagens/Dice - Werewolf The Apocalypse/Dice_Rage_Brutal.png" alt="">
+            <h1 class="brilho no titulo">Lobisomem</h1>
+            <img src="imagens/Dice - Werewolf The Apocalypse/Dice_Regular_Success.png" alt="">
         </div>
-        <div class="atributo">
-            <span class="nome-atributo">Destreza</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+
+        <!-- cabecalho -->
+        <div class="cabecalho"> <!-- div principal de cabeçalhos que vão fica dentro-->
+            <div class="cabecalho-itens"> <!--Bloco que vai conter item -->
+                <label>Nome</label> <!--Criação de um rotulo para indentificar campo -->
+                <input type="text" placeholder="Nome do personagem">
+                <!--Cria um campo para colocar uma informação em texto -->
             </div>
-        </div>
-        <div class="atributo">
-            <span class="nome-atributo">Vigor</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+
+            <div class="cabecalho-itens">
+                <label>Conceito</label>
+                <input type="text" placeholder="Frase que o defina">
             </div>
+
+            <div class="cabecalho-itens">
+                <label>Patrono</label>
+                <input type="text" placeholder="Espirito principal">
+            </div>
+
+            <div class="cabecalho-itens">
+                <label>Crônica</label>
+                <input type="text" placeholder="Nome da Crônica">
+            </div>
+
+            <div class="cabecalho-itens">
+                <label>Auspicio</label> <!--Rotulo para seleção de auspicio -->
+                <select id="selecao-auspicios">
+                    <option value="">Selecione</option> <!--add valor para seleção e nome -->
+                    <option value="ragabash">Ragabash</option>
+                    <option value="theurge">Theurge</option>
+                    <option value="philodox">Philodox</option>
+                    <option value="galliard">Galliard</option>
+                    <option value="ahroun">Ahroun</option>
+                </select>
+            </div>
+
+            <div class="cabecalho-itens">
+                <label>Tribo</label>
+                <select id="selecao-tribo">
+                    <option value="">Selecione</option>
+                    <option value="Black Furies">Black Furies</option>
+                    <option value="Bone Gnawers">Bone Gnawers</option>
+                    <option value="Children Gai">Children Gaia</option>
+                    <option value="Galestalkers">Galestalkers</option>
+                    <option value="Ghost Council">Ghost Council</option>
+                    <option value="Glass Walker">Glass Walkers</option>
+                    <option value="Hart Wardens">Hart Wardens</option>
+                    <option value="Red Talon">Red Talon</option>
+                    <option value="Shadow Lords">Shadow Lords</option>
+                    <option value="Silent Striders">Silent Striders</option>
+                    <option value="Silver Fangs">Silver Fangs</option>
+                </select>
+            </div>
+
+            <!-- Atributos -->
+            <div class="selecao">
+                <h2 class="selecao-titulo">ATRIBUTOS</h2>
+                < class="atributos">
+                    <!-- Fisicos -->
+                    <div class="grupo-de-atributo">
+                        <div class="titulo-do-grupo-de-atributo">FISICOS</div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Força</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Destreza</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Vigor</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sociais-->
+                    <div class="grupo-de-atributo">
+                        <div class="titulo-do-grupo-de-atributo">SOCIAIS</div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Carisma</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Manipulação</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Autocontrole</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mentais -->
+                    <div class="grupo-atributo">
+                        <div class="titulo-do-grupo-de-atributo">MENTAIS</div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Inteligência</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Raciocínio</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                        <div class="atributo">
+                            <span class="nome-atributo">Determinação</span>
+                            <div class="dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- Vida e Drivers-->
+             <div style="display: flex; justify-content: space-between; margin-top: 20px;"></div>
         </div>
+
     </div>
-
-    <!-- Sociais-->
-     <div class="grupo-de-atributo">
-        <div class="titulo-do-grupo-de-atributo">SOCIAIS</div>
-        <div class="atributo">
-            <span class="nome-atributo">Carisma</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-        <div class="atributo">
-            <span class="nome-atributo">Manipulação</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-        <div class="atributo">
-            <span class="nome-atributo">Autocontrole</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-     </div>
-
-     <!-- Mentais -->
-      <div class="grupo-atributo">
-        <div class="titulo-do-grupo-de-atributo">MENTAIS</div>
-        <div class="atributo">
-            <span class="nome-atributo">Inteligência</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-        <div class="atributo">
-            <span class="nome-atributo">Raciocínio</span>
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot">
-                    
-                </div>
-            </div>
-        </div>
-      </div>
-</div>
-</div>
-
-</div>
-
-</div>
 </body>
+
 </html>
