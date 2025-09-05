@@ -133,7 +133,7 @@ body {
 
 .attribute-name {
   min-width: 100px;
-  color: #ddd;
+  color: #f5eeee;
 }
 
 .dots {
@@ -144,21 +144,21 @@ body {
 .dot {
   width: 16px;
   height: 16px;
-  border: 1px solid #8b0000;
+  border: 1px solid #12db2d;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #222;
+  background-color: #000000;
   transition: all 0.3s;
 }
 
 .dot:hover {
   transform: scale(1.2);
-  box-shadow: 0 0 5px #8b0000;
+  box-shadow: 0 0 5px #12db2d;
 }
 
 .dot.filled {
-  background-color: #8b0000;
-  box-shadow: 0 0 5px #8b0000;
+  background-color: #043503;
+  box-shadow: 0 0 5px #d8ddd8;
 }
 
 /* Perícias */
@@ -172,7 +172,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .skill-name {
