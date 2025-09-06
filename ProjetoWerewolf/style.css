@@ -7,24 +7,26 @@
 }
 
 body {
-  background-color: #189e2a;
+  background-color: #1f8a3452;
   color: #ddd;
   line-height: 1.6;
-  padding: 20px;
-  background-image:url(imagens/fundo/https___pin_it_5d8rQrL5K.jpg);
-  background-size: auto;
+  padding: 50px;
+  /* margin-top: 100px; */
+  background-image:url(imagens/fundo/fundolobo8.jfif);
+  background-size:auto;
   background-attachment: fixed;
-  background-position: auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .character-sheet {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: rgba(20, 20, 20, 0.9);
+  background-color: rgba(66, 6, 6, 0.336);
   padding: 20px;
-  box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  border: 2px solid #8b0000;
+  border: 2px solid #0c6634;
 }
 
 /* Título e logo */
