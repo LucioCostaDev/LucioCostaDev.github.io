@@ -1,5 +1,5 @@
 @keyframes animacao {
-	from {background-color: red;}
+	from {background-color: rgb(9, 95, 48);}
 	to {background-color: yellow;}
 }
 
@@ -103,7 +103,7 @@ animation delay e iteration
 	position: relative;
 	padding: 10px;
 	margin-bottom: 25px;
-	width: 150px
+	width: 150px;
 	height: 75px;
 	color: #FFF;
 	text-transform: uppercase;
