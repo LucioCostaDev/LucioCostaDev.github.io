@@ -319,3 +319,28 @@ function carregarFicha() {
 function imprimirFicha() {
     window.print();
 }
+
+// ==================== TOPO FIXO - APENAS IMAGEM ====================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Criar elemento do topo fixo
+    const topoFixo = document.createElement('div');
+    topoFixo.className = 'topo-fixo';
+    
+    // Apenas a imagem, sem conteúdo de texto
+    topoFixo.innerHTML = ''; // Vazio - só a imagem do CSS
+    
+    // Adicionar o topo fixo como primeiro elemento do body
+    document.body.insertBefore(topoFixo, document.body.firstChild);
+    
+    // Função para voltar ao topo suavemente
+    topoFixo.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    console.log('✅ Topo fixo (apenas imagem) configurado!');
+});
+

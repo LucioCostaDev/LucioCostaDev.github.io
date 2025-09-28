@@ -9,7 +9,7 @@
     --cor1: #2B332A;
     --cor2: #52361D;
     --cor3: #ffffff;
-    --cor4: rgba(230, 227, 219, 0.85);
+    --cor4: rgba(228, 215, 215, 0.13);
 
     --fonte-padrao:'Tagesschrift', system-ui;
     --fonte-secundaria: 'Dancing Script', cursive;
@@ -24,13 +24,13 @@
 }
 
 body {
-    background-color: #1a1a1a;
+    background-color:var(--cor4);
     color: var(--cor1);
     line-height: 1.6;
-    padding: 20px;
-    background-image: url(imagens/fundo/lobisomen.png);
-    background-size: cover;
-    background-position: center;
+    padding: 150px;
+    background-image: url(imagens/fundo/fundolobo17.png);
+    background-size: contain; /* Mudado de 'cover' para 'contain' */
+    background-position: center top; /* Alinhado ao topo */
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
@@ -47,6 +47,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Adiciona um fundo suave para contrastar com a imagem */
+    background: var(--cor4);
+    border-radius: 15px;
+    padding: 10px;
 }
 
 /* Topo do site */
@@ -77,9 +81,9 @@ body {
     object-fit: contain;
     border: 2px solid var(--cor0);
     border-radius: 8px;
-    background-color: rgba(43, 51, 42, 0.9);
+    background-color: var(--cor4);
     display: none;
-    box-shadow: 0 0 15px rgba(44, 255, 5, 0.7);
+    box-shadow: 0 0 15px var(--cor0));
     padding: 5px;
 }
 
@@ -88,7 +92,7 @@ body {
     width: 100%;
     background-color: var(--cor4);
     padding: 25px;
-    box-shadow: 0 0 30px rgba(44, 255, 5, 0.3);
+    box-shadow: 0 0 30px var(--cor1);
     border-radius: 15px;
     border: 2px solid var(--cor0);
     margin-bottom: 20px;
@@ -100,9 +104,9 @@ body {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(44, 255, 5, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(44, 255, 5, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(44, 255, 5, 0); }
+    0% { box-shadow: 0 0 0 0 var(--cor0); }
+    70% { box-shadow: 0 0 0 15px var(--cor4); }
+    100% { box-shadow: 0 0 0 0 var(--cor0); }
 }
 
 /* Título e logo */
@@ -135,10 +139,10 @@ body {
     filter: drop-shadow(0 0 5px var(--cor0));
 }
 
-/* Seções */
+/* Seções (sections - quadrados das fichas */
 .section {
     margin-bottom: 25px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(44,255,5,0.05) 100%);
+    background: linear-gradient(135deg, rgba(11, 165, 57, 0.205) 0%, rgba(18, 102, 3, 0.05) 100%);
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid var(--cor0);
@@ -181,7 +185,7 @@ body {
 
 .header-item input, 
 .header-item select {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--cor4);
     border: 1px solid var(--cor1);
     color: var(--cor1);
     padding: 10px;
@@ -608,6 +612,7 @@ body {
 @media (max-width: 768px) {
     body {
         padding: 10px;
+        background-size: auto 50%; /* Reduz ainda mais o fundo em mobile */
     }
     
     .character-sheet {
@@ -646,6 +651,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        background-size: auto 40%; /* Fundo ainda menor em telas pequenas */
+    }
+    
     .title {
         font-size: 1.6em;
     }
@@ -663,3 +672,38 @@ body {
         max-width: 80px;
     }
 }
+
+/* ==================== TOPO FIXO - APENAS IMAGEM ==================== */
+.topo-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 170px; /* Altura do topo */
+    background-image: url('imagens/fundo/topo1.png');
+    
+    /* IMAGEM INTEIRA SEM CORTES */
+    background-size: contain;    /* Mostra imagem completa */
+    background-position: center; /* Centraliza */
+    background-repeat: no-repeat; /* Não repete */
+    
+    /* Cor de fundo para preencher espaços vazios */
+    background-color: var(--cor4); /* Cor que combina com seu tema */
+    
+    border-radius: 3px solid var(--cor0);
+    box-shadow: 0 5px 30px var(--cor4);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efeitos interativos */
+.topo-fixo:hover {
+    border-bottom: 3px solid var(--cor0);
+    box-shadow: 0 5px 35px var(--cor4);
+}
+
+.topo-fixo:active {
+    transform: translateY(1px);
+}
+
