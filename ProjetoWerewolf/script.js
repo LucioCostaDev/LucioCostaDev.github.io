@@ -273,47 +273,315 @@ function rolarDados() {
     diceResults.appendChild(resumo);
 }
 
-// ==================== SISTEMA DE SALVAMENTO ====================
+// ==================== SISTEMA DE SALVAMENTO COMPLETO ====================
 
 function salvarFicha() {
-    const fichaData = {
-        nome: document.querySelector('input[placeholder="Nome do personagem"]').value,
-        conceito: document.querySelector('input[placeholder="Conceito do personagem"]').value,
-        patrono: document.querySelector('input[placeholder="Patrono"]').value,
-        cronica: document.querySelector('input[placeholder="Crônica"]').value,
-        auspice: document.getElementById('auspice-select').value,
-        tribe: document.getElementById('tribe-select').value,
-        // Adicionar pontos posteriormente
-    };
-    
-    localStorage.setItem('fichaLobisomem', JSON.stringify(fichaData));
-    alert('🎉 Ficha salva com sucesso!');
+    try {
+        const fichaData = {
+            // Dados básicos
+            nome: document.querySelector('input[placeholder="Nome do personagem"]').value,
+            conceito: document.querySelector('input[placeholder="Conceito do personagem"]').value,
+            patrono: document.querySelector('input[placeholder="Patrono"]').value,
+            cronica: document.querySelector('input[placeholder="Crônica"]').value,
+            auspice: document.getElementById('auspice-select').value,
+            tribe: document.getElementById('tribe-select').value,
+            
+            // Atributos
+            atributos: {},
+            
+            // Habilidades
+            habilidades: {},
+            
+            // Renome
+            renome: {},
+            
+            // Dons e Rituais
+            dons: [],
+            
+            // Anotações Gerais
+            anotacoes: [],
+            
+            // Pontos especiais
+            pontos: {
+                vitalidade: getFilledDotsCount('.health-willpower-container .dots:first-child'),
+                forcaVontade: getFilledDotsCount('.health-willpower-container .dots:nth-child(2)'),
+                crinos: getFilledDotsCount('.health-willpower-container .dots:nth-child(3)'),
+                furia: getFilledDotsCount('.health-willpower-container .dots:nth-child(4)')
+            }
+        };
+        
+        // Salvar atributos
+        const atributosGroups = document.querySelectorAll('.attribute-group');
+        atributosGroups.forEach(group => {
+            const groupTitle = group.querySelector('.attribute-group-title').textContent.toLowerCase();
+            fichaData.atributos[groupTitle] = {};
+            
+            const attributes = group.querySelectorAll('.attribute');
+            attributes.forEach(attr => {
+                const attrName = attr.querySelector('.attribute-name').textContent.toLowerCase();
+                const dots = attr.querySelectorAll('.dot');
+                const filledCount = Array.from(dots).filter(dot => dot.classList.contains('filled')).length;
+                fichaData.atributos[groupTitle][attrName] = filledCount;
+            });
+        });
+        
+        // Salvar habilidades
+        const skills = document.querySelectorAll('.skill');
+        skills.forEach(skill => {
+            const skillName = skill.querySelector('.skill-name').textContent.toLowerCase();
+            const skillInput = skill.querySelector('.skill-input').value;
+            const dots = skill.querySelectorAll('.dot');
+            const filledCount = Array.from(dots).filter(dot => dot.classList.contains('filled')).length;
+            
+            fichaData.habilidades[skillName] = {
+                especializacao: skillInput,
+                pontos: filledCount
+            };
+        });
+        
+        // Salvar renome
+        const renomeItems = document.querySelectorAll('.renome-item');
+        renomeItems.forEach(item => {
+            const renomeTitle = item.querySelector('.renome-title').textContent.toLowerCase();
+            const dots = item.querySelectorAll('.dot');
+            const filledCount = Array.from(dots).filter(dot => dot.classList.contains('filled')).length;
+            fichaData.renome[renomeTitle] = filledCount;
+        });
+        
+        // Salvar dons e rituais
+        const giftsRows = document.querySelectorAll('.gifts-table tbody tr');
+        giftsRows.forEach(row => {
+            const inputs = row.querySelectorAll('input');
+            if (inputs[0].value.trim() !== '') {
+                fichaData.dons.push({
+                    nome: inputs[0].value,
+                    dados: inputs[1].value,
+                    custo: inputs[2].value,
+                    notas: inputs[3].value
+                });
+            }
+        });
+        
+        // Salvar anotações gerais
+        const anotacoesRows = document.querySelectorAll('.gifts-table:last-child tbody tr');
+        anotacoesRows.forEach(row => {
+            const inputs = row.querySelectorAll('input');
+            if (inputs[0].value.trim() !== '') {
+                fichaData.anotacoes.push({
+                    nome: inputs[0].value,
+                    tipo: inputs[1].value,
+                    acoes: inputs[2].value,
+                    geral: inputs[3].value
+                });
+            }
+        });
+        
+        localStorage.setItem('fichaLobisomem', JSON.stringify(fichaData));
+        alert('🎉 Ficha salva com sucesso!');
+        console.log('💾 Ficha salva:', fichaData);
+        
+    } catch (error) {
+        console.error('❌ Erro ao salvar ficha:', error);
+        alert('❌ Erro ao salvar a ficha. Verifique o console para detalhes.');
+    }
 }
 
 function carregarFicha() {
-    const fichaSalva = localStorage.getItem('fichaLobisomem');
-    if (fichaSalva) {
-        const fichaData = JSON.parse(fichaSalva);
-        
-        document.querySelector('input[placeholder="Nome do personagem"]').value = fichaData.nome || '';
-        document.querySelector('input[placeholder="Conceito do personagem"]').value = fichaData.conceito || '';
-        document.querySelector('input[placeholder="Patrono"]').value = fichaData.patrono || '';
-        document.querySelector('input[placeholder="Crônica"]').value = fichaData.cronica || '';
-        document.getElementById('auspice-select').value = fichaData.auspice || '';
-        document.getElementById('tribe-select').value = fichaData.tribe || '';
-        
-        // Atualizar imagens
-        if (fichaData.auspice) {
-            document.getElementById('auspice-select').dispatchEvent(new Event('change'));
+    try {
+        const fichaSalva = localStorage.getItem('fichaLobisomem');
+        if (fichaSalva) {
+            const fichaData = JSON.parse(fichaSalva);
+            
+            // Carregar dados básicos
+            document.querySelector('input[placeholder="Nome do personagem"]').value = fichaData.nome || '';
+            document.querySelector('input[placeholder="Conceito do personagem"]').value = fichaData.conceito || '';
+            document.querySelector('input[placeholder="Patrono"]').value = fichaData.patrono || '';
+            document.querySelector('input[placeholder="Crônica"]').value = fichaData.cronica || '';
+            document.getElementById('auspice-select').value = fichaData.auspice || '';
+            document.getElementById('tribe-select').value = fichaData.tribe || '';
+            
+            // Atualizar nome central
+            document.getElementById("nomeCentral").textContent = (fichaData.nome || '').toUpperCase();
+            
+            // Carregar atributos
+            if (fichaData.atributos) {
+                const atributosGroups = document.querySelectorAll('.attribute-group');
+                atributosGroups.forEach(group => {
+                    const groupTitle = group.querySelector('.attribute-group-title').textContent.toLowerCase();
+                    if (fichaData.atributos[groupTitle]) {
+                        const attributes = group.querySelectorAll('.attribute');
+                        attributes.forEach(attr => {
+                            const attrName = attr.querySelector('.attribute-name').textContent.toLowerCase();
+                            const dots = attr.querySelectorAll('.dot');
+                            const filledCount = fichaData.atributos[groupTitle][attrName] || 0;
+                            
+                            for (let i = 0; i < dots.length; i++) {
+                                if (i < filledCount) {
+                                    dots[i].classList.add('filled');
+                                } else {
+                                    dots[i].classList.remove('filled');
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Carregar habilidades
+            if (fichaData.habilidades) {
+                const skills = document.querySelectorAll('.skill');
+                skills.forEach(skill => {
+                    const skillName = skill.querySelector('.skill-name').textContent.toLowerCase();
+                    if (fichaData.habilidades[skillName]) {
+                        const skillInput = skill.querySelector('.skill-input');
+                        const dots = skill.querySelectorAll('.dot');
+                        
+                        skillInput.value = fichaData.habilidades[skillName].especializacao || '';
+                        
+                        const filledCount = fichaData.habilidades[skillName].pontos || 0;
+                        for (let i = 0; i < dots.length; i++) {
+                            if (i < filledCount) {
+                                dots[i].classList.add('filled');
+                            } else {
+                                dots[i].classList.remove('filled');
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Carregar renome
+            if (fichaData.renome) {
+                const renomeItems = document.querySelectorAll('.renome-item');
+                renomeItems.forEach(item => {
+                    const renomeTitle = item.querySelector('.renome-title').textContent.toLowerCase();
+                    if (fichaData.renome[renomeTitle] !== undefined) {
+                        const dots = item.querySelectorAll('.dot');
+                        const filledCount = fichaData.renome[renomeTitle] || 0;
+                        
+                        for (let i = 0; i < dots.length; i++) {
+                            if (i < filledCount) {
+                                dots[i].classList.add('filled');
+                            } else {
+                                dots[i].classList.remove('filled');
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Carregar pontos especiais
+            if (fichaData.pontos) {
+                const healthWillpowerDots = document.querySelectorAll('.health-willpower-container .dots');
+                
+                // Vitalidade
+                if (healthWillpowerDots[0]) {
+                    const dots = healthWillpowerDots[0].querySelectorAll('.dot');
+                    const filledCount = fichaData.pontos.vitalidade || 0;
+                    for (let i = 0; i < dots.length; i++) {
+                        if (i < filledCount) {
+                            dots[i].classList.add('filled');
+                        } else {
+                            dots[i].classList.remove('filled');
+                        }
+                    }
+                }
+                
+                // Força de Vontade
+                if (healthWillpowerDots[1]) {
+                    const dots = healthWillpowerDots[1].querySelectorAll('.dot');
+                    const filledCount = fichaData.pontos.forcaVontade || 0;
+                    for (let i = 0; i < dots.length; i++) {
+                        if (i < filledCount) {
+                            dots[i].classList.add('filled');
+                        } else {
+                            dots[i].classList.remove('filled');
+                        }
+                    }
+                }
+                
+                // Crinos
+                if (healthWillpowerDots[2]) {
+                    const dots = healthWillpowerDots[2].querySelectorAll('.dot');
+                    const filledCount = fichaData.pontos.crinos || 0;
+                    for (let i = 0; i < dots.length; i++) {
+                        if (i < filledCount) {
+                            dots[i].classList.add('filled');
+                        } else {
+                            dots[i].classList.remove('filled');
+                        }
+                    }
+                }
+                
+                // Fúria
+                if (healthWillpowerDots[3]) {
+                    const dots = healthWillpowerDots[3].querySelectorAll('.dot');
+                    const filledCount = fichaData.pontos.furia || 0;
+                    for (let i = 0; i < dots.length; i++) {
+                        if (i < filledCount) {
+                            dots[i].classList.add('filled');
+                        } else {
+                            dots[i].classList.remove('filled');
+                        }
+                    }
+                }
+            }
+            
+            // Carregar dons e rituais
+            if (fichaData.dons && fichaData.dons.length > 0) {
+                const giftsRows = document.querySelectorAll('.gifts-table tbody tr');
+                fichaData.dons.forEach((dom, index) => {
+                    if (index < giftsRows.length) {
+                        const inputs = giftsRows[index].querySelectorAll('input');
+                        inputs[0].value = dom.nome || '';
+                        inputs[1].value = dom.dados || '';
+                        inputs[2].value = dom.custo || '';
+                        inputs[3].value = dom.notas || '';
+                    }
+                });
+            }
+            
+            // Carregar anotações gerais
+            if (fichaData.anotacoes && fichaData.anotacoes.length > 0) {
+                const anotacoesRows = document.querySelectorAll('.gifts-table:last-child tbody tr');
+                fichaData.anotacoes.forEach((anotacao, index) => {
+                    if (index < anotacoesRows.length) {
+                        const inputs = anotacoesRows[index].querySelectorAll('input');
+                        inputs[0].value = anotacao.nome || '';
+                        inputs[1].value = anotacao.tipo || '';
+                        inputs[2].value = anotacao.acoes || '';
+                        inputs[3].value = anotacao.geral || '';
+                    }
+                });
+            }
+            
+            // Atualizar imagens
+            if (fichaData.auspice) {
+                document.getElementById('auspice-select').dispatchEvent(new Event('change'));
+            }
+            if (fichaData.tribe) {
+                document.getElementById('tribe-select').dispatchEvent(new Event('change'));
+            }
+            
+            alert('📂 Ficha carregada com sucesso!');
+            console.log('📂 Ficha carregada:', fichaData);
+            
+        } else {
+            alert('❌ Nenhuma ficha salva encontrada.');
         }
-        if (fichaData.tribe) {
-            document.getElementById('tribe-select').dispatchEvent(new Event('change'));
-        }
-        
-        alert('📂 Ficha carregada com sucesso!');
-    } else {
-        alert('❌ Nenhuma ficha salva encontrada.');
+    } catch (error) {
+        console.error('❌ Erro ao carregar ficha:', error);
+        alert('❌ Erro ao carregar a ficha. Verifique o console para detalhes.');
     }
+}
+
+// Função auxiliar para contar pontos preenchidos
+function getFilledDotsCount(selector) {
+    const dotsContainer = document.querySelector(selector);
+    if (!dotsContainer) return 0;
+    
+    const dots = dotsContainer.querySelectorAll('.dot');
+    return Array.from(dots).filter(dot => dot.classList.contains('filled')).length;
 }
 
 function imprimirFicha() {
@@ -344,17 +612,31 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Topo fixo (apenas imagem) configurado!');
 });
 
-  // Pegar o input de nome e atualizar o span no meio das imagens
-  document.getElementById("nome").addEventListener("input", function() {
-    document.getElementById("nomeCentral").textContent = this.value.toUpperCase();
-  });
+// ==================== ATUALIZAÇÃO DO NOME CENTRAL ====================
 
-  // ação dado para o final da página
-  const dado = document.getElementById('dado');
+document.addEventListener('DOMContentLoaded', function() {
+    // Pegar o input de nome e atualizar o span no meio das imagens
+    const nomeInput = document.getElementById("nome");
+    if (nomeInput) {
+        nomeInput.addEventListener("input", function() {
+            const nomeCentral = document.getElementById("nomeCentral");
+            if (nomeCentral) {
+                nomeCentral.textContent = this.value.toUpperCase();
+            }
+        });
+    }
+});
 
-dado.addEventListener('click', () => {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: 'smooth'
-  });
+// ==================== AÇÃO DO DADO PARA O FINAL DA PÁGINA ====================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dado = document.getElementById('dado');
+    if (dado) {
+        dado.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
