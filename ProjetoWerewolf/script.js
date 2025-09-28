@@ -348,3 +348,13 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("nome").addEventListener("input", function() {
     document.getElementById("nomeCentral").textContent = this.value.toUpperCase();
   });
+
+  // ação dado para o final da página
+  const dado = document.getElementById('dado');
+
+dado.addEventListener('click', () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+});

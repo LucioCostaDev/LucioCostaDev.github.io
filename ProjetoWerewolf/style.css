@@ -733,3 +733,21 @@ body {
       border-radius: 8px;
       background-color: rgba(228, 215, 215, 0.13);
     }
+
+    /* ação para dado */
+    #dado {
+  position: fixed;   /* fixa na tela, não dentro do container */
+  bottom: 20px;      /* distância da parte de baixo */
+  right: 20px;       /* distância da borda direita */
+  width: 60px;
+  height: 60px;
+  background: #ffcc00;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  user-select: none;
+}
