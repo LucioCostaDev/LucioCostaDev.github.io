@@ -344,3 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Topo fixo (apenas imagem) configurado!');
 });
 
+  // Pegar o input de nome e atualizar o span no meio das imagens
+  document.getElementById("nome").addEventListener("input", function() {
+    document.getElementById("nomeCentral").textContent = this.value.toUpperCase();
+  });

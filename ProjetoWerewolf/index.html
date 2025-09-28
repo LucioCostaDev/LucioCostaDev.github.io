@@ -13,18 +13,19 @@
   <!-- FICHA DO PERSONAGEM -->
   <div class="character-sheet pulse">
 
-  <!-- Imagens flutuantes DENTRO da ficha -->
-   <div class="floating-images">
+  <!-- Imagens flutuantes -->
+    <div class="floating-images">
       <img id="auspice-floating-image" class="floating-image" src="" alt="Auspice">
-      <img id="tribe-floating-image" class="floating-image" src="" alt="Tribe">
-    </div> 
+      <span id="nomeCentral"></span>
+      <img id="tribe-floating-image" class="floating-image" src="" alt="Tribo">
+    </div>
 
       <!-- Cabeçalho -->
     <div class="section">
       <div class="header">
         <div class="header-item">
-          <label>Nome</label>
-          <input type="text" placeholder="Nome do personagem">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Nome do personagem">
         </div>
         <div class="header-item">
           <label>Conceito</label>
