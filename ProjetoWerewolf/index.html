@@ -625,15 +625,20 @@
       Werewolf
     </div>
   </div>
-</div>
-<!-- Rolagem de Dados -->
-<div id="dice-roller">
-  <h2>🎲 Jogar Dados</h2>
-  <label for="numDice">Quantidade de dados:</label>
-  <input type="number" id="numDice" min="1" max="20" value="1">
-  <button onclick="rollDice()">Rolar</button>
 
-  <div id="dice-results"></div>
+<!-- 🎲 Jogada de Dados -->
+  <div class="dice-box">
+    <h2>🎲 Jogada de Dados</h2>
+
+    <label for="qtd">Quantos dados?</label>
+    <input type="number" id="qtd" min="1" max="10" value="1">
+
+    <br><br>
+    <button onclick="rolarDados()">Rolar!</button>
+
+    <!-- Resultados -->
+    <div class="dice-results" id="diceResults"></div>
+  </div>
 </div>
 <script src="script.js"></script>
 </body>
