@@ -298,15 +298,6 @@ body {
   to { transform: scale(1.2); }
 }
 
-#dice-summary {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: rgba(139, 0, 0, 0.2);
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
-}
-
 /* Auspice e Tribe com imagens */
 .auspice-tribe-container {
   display: flex;
@@ -404,4 +395,31 @@ body {
 
 .footer button:active {
   transform: scale(0.95);
+}
+
+#dice-roller {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: #111;
+  color: #fff;
+  border-top: 2px solid #444;
+}
+
+#dice-results {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#dice-results img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+#dice-results img:hover {
+  transform: rotate(15deg) scale(1.1);
 }

@@ -53,80 +53,6 @@ const auspiceImages = {
     }
   }
   
-  // Função para rolar os dados
-  function rollDice() {
-    const count = parseInt(document.getElementById('dice-count').value) || 1;
-    const difficulty = parseInt(document.getElementById('difficulty').value) || 8;
-    const container = document.getElementById('dice-images-container');
-    const totalDiceElement = document.getElementById('total-dice');
-    const successCountElement = document.getElementById('success-count');
-    const criticalCountElement = document.getElementById('critical-count');
-    const failureCountElement = document.getElementById('failure-count');
-    
-    // Limpa resultados anteriores
-    container.innerHTML = '';
-    totalDiceElement.textContent = '0';
-    successCountElement.textContent = '0';
-    criticalCountElement.textContent = '0';
-    failureCountElement.textContent = '0';
-    
-    // Animação de rolagem
-    for (let i = 0; i < count; i++) {
-      const dice = document.createElement('img');
-      dice.className = 'dice-face rolling';
-      dice.src = 'imagens/Dice - Werewolf The Apocalypse/exclamation.png';
-      container.appendChild(dice);
-    }
-    
-    // Resultado após 1 segundo
-    setTimeout(() => {
-      let successes = 0;
-      let criticals = 0;
-      let failures = 0;
-      container.innerHTML = '';
-      
-      // Gera os resultados
-      const results = [];
-      for (let i = 0; i < count; i++) {
-        const roll = Math.floor(Math.random() * 10) + 1;
-        results.push(roll);
-        
-        if (roll >= difficulty) successes++;
-        if (roll === 10) criticals++;
-        if (roll < difficulty) failures++;
-      }
-      
-      // Mostra os dados com efeito sequencial
-      results.forEach((roll, index) => {
-        setTimeout(() => {
-          const result = diceResults[roll];
-          const dice = document.createElement('img');
-          dice.className = `dice-face ${result.class}`;
-          dice.src = result.img;
-          dice.alt = `Dado: ${roll}`;
-          dice.title = `Resultado: ${roll}`;
-          container.appendChild(dice);
-        }, index * 100);
-      });
-      
-      // Atualiza o resumo
-      setTimeout(() => {
-        totalDiceElement.textContent = count;
-        successCountElement.textContent = successes;
-        criticalCountElement.textContent = criticals;
-        failureCountElement.textContent = failures;
-        
-        // Efeito especial para críticos
-        if (criticals > 0) {
-          criticalCountElement.classList.add('pulse');
-          setTimeout(() => {
-            criticalCountElement.classList.remove('pulse');
-          }, 2000);
-        }
-      }, count * 100);
-    }, 1000);
-  }
-  
   // Inicialização quando o DOM estiver carregado
   document.addEventListener('DOMContentLoaded', function() {
     // Configura os pontos (dots)
@@ -419,3 +345,18 @@ function clearCharacterSheet() {
   alert('Ficha limpa com sucesso!');
 }
 
+function rollDice() {
+  const numDice = document.getElementById("numDice").value;
+  const diceContainer = document.getElementById("dice-results");
+  diceContainer.innerHTML = ""; // limpa os dados anteriores
+
+  for (let i = 0; i < numDice; i++) {
+    const roll = Math.floor(Math.random() * 10) + 1; // número de 1 a 6
+    const img = document.createElement("img");
+
+    // aqui você pode usar suas próprias imagens de dados
+    img.src = `imagens/img/dado${roll}.png`; 
+    img.alt = `Dado ${roll}`;
+    diceContainer.appendChild(img);
+  }
+}
