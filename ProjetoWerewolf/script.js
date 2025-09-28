@@ -2,16 +2,16 @@
 
 // CONFIGURE AQUI OS CAMINHOS DAS IMAGENS DOS DADOS
 const diceImages = {
-    1: 'imagens/Dice/dado_1.png',
-    2: 'imagens/Dice/dado_2.png', 
-    3: 'imagens/Dice/dado_3.png',
-    4: 'imagens/Dice/dado_4.png',
-    5: 'imagens/Dice/dado_5.png',
-    6: 'imagens/Dice/dado_6.png',
-    7: 'imagens/Dice/dado_7.png',
-    8: 'imagens/Dice/dado_8.png',
-    9: 'imagens/Dice/dado_9.png',
-    10: 'imagens/Dice/dado_10.png'
+    1: 'imagens/Dice/dado1.png',
+    2: 'imagens/Dice/dado2.png', 
+    3: 'imagens/Dice/dado3.png',
+    4: 'imagens/Dice/dado4.png',
+    5: 'imagens/Dice/dado5.png',
+    6: 'imagens/Dice/dado6.png',
+    7: 'imagens/Dice/dado7.png',
+    8: 'imagens/Dice/dado8.png',
+    9: 'imagens/Dice/dado9.png',
+    10: 'imagens/Dice/dado10.png'
 };
 
 // CONFIGURE AQUI OS CAMINHOS DAS IMAGENS DE AUSPÍCIOS E TRIBOS
